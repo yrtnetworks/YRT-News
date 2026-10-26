@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +25,10 @@
       --atlas-bg: #1f6f5c;
       --atlas-fg: #e8f5ef;
 
-      --now-bg: #ff6b3d;
+      --now-bg: #ffeb00;
       --now-fg: #1a1030;
 
-      --weekly-bg: #2b2a8f;
+      --weekly-bg: #c45116;
       --weekly-fg: #ffffff;
 
       --line: 2px solid var(--ink);
@@ -102,7 +101,6 @@
       text-decoration: none;
     }
 
-    /* Main logo: larger, without a rectangle or background */
     .brand-icon {
       width: 200px;
       height: auto;
@@ -244,8 +242,27 @@
       cursor: pointer;
     }
 
+    /* Icon and title remain together when the section is closed. */
+    .row-heading {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2vw, 28px);
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    /* Publication icons: 1.5 times the original 112px size. */
+    .row-icon {
+      width: 168px;
+      height: 168px;
+      flex: 0 0 168px;
+      object-fit: contain;
+      display: block;
+    }
+
     .row-name {
       display: block;
+      min-width: 0;
       font-size: clamp(42px, 8.5vw, 124px);
       line-height: 1;
       letter-spacing: -.045em;
@@ -344,19 +361,10 @@
 
     .publication-details {
       display: grid;
-      grid-template-columns: 112px minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 24px;
       align-items: start;
       max-width: 850px;
-    }
-
-    /* Each publication logo has its own space */
-    .publication-logo {
-      width: 112px;
-      height: 112px;
-      padding: 0;
-      object-fit: contain;
-      display: block;
     }
 
     .publication-copy {
@@ -379,7 +387,6 @@
       line-height: 1.65;
     }
 
-    /* Placeholder buttons: deliberately do nothing for now */
     .publication-button {
       display: inline-flex;
       justify-content: center;
@@ -638,6 +645,16 @@
         height: 112px;
         margin-top: 20px;
       }
+
+      .row-icon {
+        width: 126px;
+        height: 126px;
+        flex-basis: 126px;
+      }
+
+      .row-name {
+        font-size: clamp(38px, 7vw, 76px);
+      }
     }
 
     @media (max-width: 520px) {
@@ -663,29 +680,36 @@
       }
 
       .row-toggle {
-        gap: 12px;
-        padding-top: 22px;
-        padding-bottom: 22px;
+        gap: 10px;
+        padding: 18px 16px;
+      }
+
+      .row-heading {
+        gap: 10px;
+      }
+
+      .row-icon {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
       }
 
       .row-name {
-        font-size: clamp(38px, 10vw, 54px);
+        font-size: clamp(25px, 7.5vw, 40px);
         letter-spacing: -.04em;
       }
 
       .row-sign {
-        width: 23px;
-        height: 23px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .panel-body {
+        padding: 0 20px 30px;
       }
 
       .publication-details {
-        grid-template-columns: 1fr;
         gap: 18px;
-      }
-
-      .publication-logo {
-        width: 92px;
-        height: 92px;
       }
 
       .publication-description {
@@ -785,7 +809,10 @@
             aria-expanded="true"
             aria-controls="p-os"
           >
-            <span class="row-name">OS Times</span>
+            <span class="row-heading">
+              <img class="row-icon" src="os_times-icon.png" alt="">
+              <span class="row-name">OS Times</span>
+            </span>
             <span class="row-sign" aria-hidden="true"></span>
           </button>
 
@@ -793,13 +820,6 @@
             <div class="panel-clip">
               <div class="panel-body">
                 <div class="publication-details">
-                  <img
-                    class="publication-logo"
-                    src="os_times-icon.png"
-                    alt="OS Times logo"
-                    loading="lazy"
-                  >
-
                   <div class="publication-copy">
                     <h2 class="publication-tagline">
                       Breaking News &amp; Campus Happenings
@@ -812,11 +832,8 @@
                       sports highlights, and important updates as they unfold.
                     </p>
 
-                    <button
-                      class="publication-button"
-                      type="button"
-                      aria-label="OS Times website coming soon"
-                    >
+                    <button class="publication-button" type="button"
+                      aria-label="OS Times website coming soon">
                       Explore OS Times
                     </button>
                   </div>
@@ -835,7 +852,10 @@
             aria-expanded="false"
             aria-controls="p-atlas"
           >
-            <span class="row-name">Y-Atlas</span>
+            <span class="row-heading">
+              <img class="row-icon" src="y-atlas-icon.png" alt="">
+              <span class="row-name">Y-Atlas</span>
+            </span>
             <span class="row-sign" aria-hidden="true"></span>
           </button>
 
@@ -843,13 +863,6 @@
             <div class="panel-clip">
               <div class="panel-body">
                 <div class="publication-details">
-                  <img
-                    class="publication-logo"
-                    src="y-atlas-icon.png"
-                    alt="Y-Atlas logo"
-                    loading="lazy"
-                  >
-
                   <div class="publication-copy">
                     <h2 class="publication-tagline">
                       The Student Blog &amp; Unfiltered Opinions
@@ -863,11 +876,8 @@
                       school, this is where student voices take center stage.
                     </p>
 
-                    <button
-                      class="publication-button"
-                      type="button"
-                      aria-label="Y-Atlas website coming soon"
-                    >
+                    <button class="publication-button" type="button"
+                      aria-label="Y-Atlas website coming soon">
                       Explore Y-Atlas
                     </button>
                   </div>
@@ -886,7 +896,10 @@
             aria-expanded="false"
             aria-controls="p-now"
           >
-            <span class="row-name">Yahya Now</span>
+            <span class="row-heading">
+              <img class="row-icon" src="yahya_now-icon.png" alt="">
+              <span class="row-name">Yahya Now</span>
+            </span>
             <span class="row-sign" aria-hidden="true"></span>
           </button>
 
@@ -894,13 +907,6 @@
             <div class="panel-clip">
               <div class="panel-body">
                 <div class="publication-details">
-                  <img
-                    class="publication-logo"
-                    src="yahya_now-icon.png"
-                    alt="Yahya Now logo"
-                    loading="lazy"
-                  >
-
                   <div class="publication-copy">
                     <h2 class="publication-tagline">
                       Your Essential Student Hub &amp; Guide
@@ -914,11 +920,8 @@
                       policies, and key directory contacts.
                     </p>
 
-                    <button
-                      class="publication-button"
-                      type="button"
-                      aria-label="Yahya Now website coming soon"
-                    >
+                    <button class="publication-button" type="button"
+                      aria-label="Yahya Now website coming soon">
                       Explore Yahya Now
                     </button>
                   </div>
@@ -937,7 +940,10 @@
             aria-expanded="false"
             aria-controls="p-weekly"
           >
-            <span class="row-name">The Weekly Y</span>
+            <span class="row-heading">
+              <img class="row-icon" src="the_weekly_y-icon.png" alt="">
+              <span class="row-name">The Weekly Y</span>
+            </span>
             <span class="row-sign" aria-hidden="true"></span>
           </button>
 
@@ -945,13 +951,6 @@
             <div class="panel-clip">
               <div class="panel-body">
                 <div class="publication-details">
-                  <img
-                    class="publication-logo"
-                    src="the_weekly_y-icon.png"
-                    alt="The Weekly Y logo"
-                    loading="lazy"
-                  >
-
                   <div class="publication-copy">
                     <h2 class="publication-tagline">
                       Your Campus Magazine &amp; Break Room
@@ -965,11 +964,8 @@
                       every week.
                     </p>
 
-                    <button
-                      class="publication-button"
-                      type="button"
-                      aria-label="The Weekly Y website coming soon"
-                    >
+                    <button class="publication-button" type="button"
+                      aria-label="The Weekly Y website coming soon">
                       Explore The Weekly Y
                     </button>
                   </div>
