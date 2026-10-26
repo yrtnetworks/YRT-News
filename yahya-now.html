@@ -17,7 +17,7 @@ body{margin:0;background:var(--yellow);color:var(--ink);font-family:var(--text);
 h1,h2,h3,p{margin-top:0;overflow-wrap:break-word}
 a,button{font:inherit;color:inherit}
 a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-
+ 
 /* Header */
 .top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px 28px;padding:clamp(24px,4vw,48px) clamp(18px,4vw,56px) clamp(20px,3vw,36px)}
 .logo-wrap{display:flex;align-items:center;gap:clamp(14px,2.5vw,30px)}
@@ -27,7 +27,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
 .top p{margin:10px 0 0;font-weight:700;max-width:26em}
 .back{display:inline-block;padding:10px 20px;border:3px solid var(--ink);background:var(--white);font-family:var(--display);font-weight:800;text-decoration:none;box-shadow:4px 4px 0 var(--ink)}
 .back:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-
+ 
 /* Sticky bar */
 .bar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:10px clamp(18px,4vw,56px);background:var(--ink);color:var(--yellow)}
 .bar nav{display:flex;flex-wrap:wrap;gap:2px 20px}
@@ -36,14 +36,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offse
 .years{display:flex;align-items:center;gap:8px;font-weight:700}
 .years button{min-width:46px;min-height:40px;padding:4px 12px;border:2px solid var(--yellow);background:transparent;color:var(--yellow);font-family:var(--display);font-weight:800;font-size:18px;cursor:pointer}
 .years button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
-
+ 
 /* Boards */
 main{padding:clamp(24px,4vw,56px) clamp(18px,4vw,56px) 40px;display:grid;gap:clamp(28px,4vw,56px)}
 .board{background:var(--white);border:3px solid var(--ink);box-shadow:var(--shadow);padding:clamp(18px,3vw,40px)}
 .board h2{margin-bottom:6px;font-family:var(--display);font-weight:900;font-stretch:75%;font-size:clamp(36px,5.5vw,72px);line-height:.95;letter-spacing:-.01em}
 .sub{margin-bottom:22px;max-width:36em}
 .year-tag{display:inline-block;margin-right:8px;padding:0 10px;background:var(--blue);color:#fff;font-family:var(--display);font-weight:800}
-
+ 
 /* Timetable: departure board */
 .board.dark{background:var(--ink);color:var(--yellow)}
 .scroll{overflow-x:auto;border:2px solid var(--yellow)}
@@ -54,7 +54,7 @@ main{padding:clamp(24px,4vw,56px) clamp(18px,4vw,56px) 40px;display:grid;gap:cla
 .dark td:empty::after{content:"–";opacity:.35}
 .dark tr:last-child td,.dark tr:last-child th{border-bottom:0}
 .dark td:last-child,.dark th:last-child{border-right:0}
-
+ 
 /* Tests */
 .tests{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .test{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 22px;padding:14px 18px;border:3px solid var(--ink);background:var(--yellow)}
@@ -62,8 +62,8 @@ main{padding:clamp(24px,4vw,56px) clamp(18px,4vw,56px) 40px;display:grid;gap:cla
 .test .what{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.1}
 .test p{margin:2px 0 0}
 .empty{margin:0;padding:22px;border:3px dashed var(--ink);font-family:var(--display);font-weight:800;font-size:clamp(22px,3vw,32px)}
-
-
+ 
+ 
 /* Test table (light) */
 .tscroll{overflow-x:auto;border:3px solid var(--ink)}
 .tt{width:100%;min-width:600px;border-collapse:collapse}
@@ -73,7 +73,7 @@ main{padding:clamp(24px,4vw,56px) clamp(18px,4vw,56px) 40px;display:grid;gap:cla
 .tt .subj{font-family:var(--display);font-weight:800;font-size:20px}
 .tt tr:last-child td{border-bottom:0}
 .tt tbody tr:nth-child(even){background:#fff9bf}
-
+ 
 /* Student government */
 .gov{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,3vw,40px);align-items:start;max-width:980px;margin:36px auto 0}
 .gov .side{margin-top:56px}
@@ -87,16 +87,16 @@ main{padding:clamp(24px,4vw,56px) clamp(18px,4vw,56px) 40px;display:grid;gap:cla
 .acting{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(14px,4vw,56px);margin:clamp(30px,5vw,56px) auto 0;max-width:700px}
 .acting .person{flex:0 1 220px;min-width:130px}
 .acting .photo{aspect-ratio:1/1}
-
+ 
 /* Code of conduct */
 .conduct{max-width:44em}
 .conduct h3{margin:30px 0 6px;font-family:var(--display);font-weight:900;font-size:28px;font-stretch:80%}
 .conduct ol{margin:10px 0 0;padding:0;list-style:none;counter-reset:r}
 .conduct li{counter-increment:r;position:relative;padding:8px 0 8px 52px;border-top:2px solid var(--ink)}
 .conduct li::before{content:counter(r);position:absolute;left:0;top:8px;width:34px;height:34px;display:grid;place-items:center;background:var(--ink);color:var(--yellow);font-family:var(--display);font-weight:900}
-
+ 
 footer{padding:20px clamp(18px,4vw,56px) 40px;font-weight:700}
-
+ 
 @media(max-width:620px){
  .top{flex-direction:column;align-items:flex-start}
  .logo-wrap{align-items:flex-end}
@@ -110,7 +110,7 @@ footer{padding:20px clamp(18px,4vw,56px) 40px;font-weight:700}
 </style>
 </head>
 <body>
-
+ 
 <header class="top" id="top">
   <div class="logo-wrap">
     <!-- Yahya Now logo: replace the file named below -->
@@ -122,7 +122,7 @@ footer{padding:20px clamp(18px,4vw,56px) 40px;font-weight:700}
   </div>
   <a class="back" href="index.html">Back to YRT Network</a>
 </header>
-
+ 
 <div class="bar">
   <nav aria-label="Yahya Now sections">
     <a href="#schedule">Schedule</a>
@@ -143,34 +143,34 @@ footer{padding:20px clamp(18px,4vw,56px) 40px;font-weight:700}
     <button type="button" data-lang="macedonian" aria-pressed="false">Macedonian</button>
   </div>
 </div>
-
+ 
 <main>
   <section class="board dark" id="schedule" aria-labelledby="h-schedule">
     <h2 id="h-schedule">Weekly Schedule</h2>
     <p class="sub"><span class="year-tag" data-year-label></span> Use the year and language buttons above to switch.</p>
     <div class="scroll" id="schedule-out" aria-live="polite"><p class="sub" style="padding:16px">Loading schedule…</p></div>
   </section>
-
+ 
   <section class="board" id="tests" aria-labelledby="h-tests">
     <h2 id="h-tests">Test Schedule</h2>
     <p class="sub" id="tests-sub">Upcoming tests for all years.</p>
     <div id="tests-out" aria-live="polite">Loading tests…</div>
   </section>
-
+ 
   <section class="board" id="government" aria-labelledby="h-gov">
     <h2 id="h-gov">Student Government</h2>
     <div class="gov" id="gov-main"></div>
     <div class="acting" id="gov-acting"></div>
   </section>
-
+ 
   <section class="board" id="conduct" aria-labelledby="h-conduct">
     <h2 id="h-conduct">School Code of Conduct</h2>
     <div class="conduct" id="conduct-out">Loading code of conduct…</div>
   </section>
 </main>
-
+ 
 <footer>© <span id="year"></span> YRT Network · Yahya Now</footer>
-
+ 
 <script>
 const YEAR_NAMES = {1:"1st Year",2:"2nd Year",3:"3rd Year",4:"4th Year"};
 let year = "1";
@@ -178,7 +178,7 @@ let lang = "albanian";
 try { year = localStorage.getItem("yn-year") || "1"; lang = localStorage.getItem("yn-lang") || "albanian"; } catch (e) {}
 const LANG_NAMES = {albanian: "Albanian", macedonian: "Macedonian"};
 const data = {};
-
+ 
 function el(tag, cls, text) {
   const n = document.createElement(tag);
   if (cls) n.className = cls;
@@ -195,7 +195,7 @@ async function getJSON(file) {
 function failure(target, file) {
   target.replaceChildren(el("p", "empty", "Could not load " + file + ". Check that it is in the same folder and the site is served over HTTP/HTTPS."));
 }
-
+ 
 /* Schedule */
 function renderSchedule() {
   const out = document.getElementById("schedule-out");
@@ -220,7 +220,7 @@ function renderSchedule() {
   table.append(body);
   out.replaceChildren(table);
 }
-
+ 
 /* Tests */
 function testDate(x) {
   if (x.dateText) return x.dateText;
@@ -260,7 +260,7 @@ function renderTests() {
   const wrap = el("div", "tscroll"); wrap.append(table);
   out.replaceChildren(wrap);
 }
-
+ 
 /* Student government */
 function person(p, cls) {
   const f = el("figure", "person " + (cls || ""));
@@ -289,7 +289,7 @@ function renderGov() {
   act.replaceChildren();
   [g.actingPresident, g.actingVicePresident].forEach(p => { if (p && p.show !== false) act.append(person(p)); });
 }
-
+ 
 /* Code of conduct */
 function renderConduct() {
   const out = document.getElementById("conduct-out");
@@ -306,7 +306,7 @@ function renderConduct() {
   });
   if (!out.children.length) out.append(el("p", "empty", "The code of conduct will be published here soon."));
 }
-
+ 
 /* Year and language pickers */
 function updateUI() {
   document.querySelectorAll("[data-year]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.year === year)));
@@ -320,7 +320,7 @@ document.querySelectorAll("button[data-year]").forEach(b => b.addEventListener("
 document.querySelectorAll("button[data-lang]").forEach(b => b.addEventListener("click", () => {
   lang = b.dataset.lang; try { localStorage.setItem("yn-lang", lang); } catch (e) {} updateUI();
 }));
-
+ 
 (async () => {
   if (!YEAR_NAMES[year]) year = "1";
   if (!LANG_NAMES[lang]) lang = "albanian";
@@ -334,3 +334,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+ 
