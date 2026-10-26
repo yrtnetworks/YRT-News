@@ -2,9 +2,9 @@
   "_help": "Add one { } block per article inside 'articles'. Required: id (unique, lowercase, no spaces, e.g. 'berat-wins'), title, date (YYYY-MM-DD). Optional: summary (shown on cards), category (becomes a filter button), author, image (file name), imageAlt, imageCaption, tags (list), featured (true = lead story), breaking (true = blue strip at the top), draft (true = hidden), body (list: each string is a paragraph; '## text' = sub-heading; '> text' = pull quote; **bold** works). Articles dated in the future stay hidden until that day.",
   "articles": [
     {
-      "id": "sample-how-to-write-an-article",
-      "title": "Sample story: how to write an article",
-      "summary": "This sample shows every part of an article. Edit it or delete it, then add your own stories.",
+      "id": "fiercely-and-justly",
+      "title": "Fiercely and Justly",
+      "summary": "After a fierce debate and multiple voting delays, Berat emerges victorious in the presidential race organized by Prof. Mukhtar Serikbay.",
       "category": "Campus",
       "author": "OS Times Staff",
       "date": "2026-10-26",
@@ -15,33 +15,52 @@
       "breaking": false,
       "draft": false,
       "tags": [
-        "sample",
-        "guide"
+        "elections",
+        "student-government",
+        "presidential-race"
       ],
       "body": [
-        "The **body** is a list. Each line in the list is one paragraph, and you can wrap words in double asterisks to make them bold.",
-        "## Sub-headings",
-        "A line that starts with two hashes and a space becomes a sub-heading, like the one above.",
-        "> A line that starts with a greater-than sign and a space becomes a pull quote.",
-        "Add a picture by putting its file name in \"image\", for example \"photos/story.jpg\"."
+        "The political atmosphere on campus reached a fever pitch during this year's presidential race, expertly organized and facilitated by **Prof. Mukhtar Serikbay**. Three candidate powerhouse figures—**Ellona**, **Berat**, and **Din**—stepped onto the stage to fight for the future of the student body under the banner of competing fiercely and justly.",
+        "## A Heated Debate and Delayed Ballots",
+        "The election campaign culminated in an intensely fierce debate where all three candidates traded sharp arguments and bold visions for the upcoming academic year. However, election night didn't come without drama. Voting was delayed several times due to administrative bottlenecks and high voter turnout, keeping the entire student body on the edge of their seats.",
+        "When the final votes were tallied, **Berat** officially claimed victory as the new President.",
+        "> \"We fought hard, but now the real work begins to deliver on every promise made to the students.\"",
+        "## Will Promises Be Kept?",
+        "With the election settled, students are now eagerly waiting to see if President-elect Berat will deliver on his headline debate campaign promises. Key pledges included:",
+        "* Changing the annual winter trip destination to **Bansko** instead of Popova Shapka.",
+        "* Formally establishing an active **Student Council** to give students direct representation.",
+        "* Organizing more frequent school **excursions** throughout the year.",
+        "* Pushing back scheduled tests when students haven't had adequate time to study.",
+        "* Establishing a designated campus **smoking room**.",
+        "While many of these proposals have raised student hopes, the candidate's ambitious agenda faces intense scrutiny. For an in-depth analysis and exclusive coverage on the controversial smoking room proposal, visit **Y-Atlas**."
       ]
     },
     {
-      "id": "sample-scheduling-and-drafts",
-      "title": "Sample story: scheduling and drafts",
-      "summary": "Set a future date to publish later, or mark an article as a draft to hide it.",
-      "category": "Sports",
+      "id": "who-truly-rules-the-student-government",
+      "title": "Who Truly Rules the Student Government?",
+      "summary": "Despite election results, whispers on campus suggest power may remain with the acting administration until spring.",
+      "category": "Opinion",
       "author": "OS Times Staff",
-      "date": "2026-10-25",
+      "date": "2026-10-26",
+      "image": "",
+      "imageAlt": "",
+      "imageCaption": "",
       "featured": false,
-      "breaking": false,
+      "breaking": true,
       "draft": false,
       "tags": [
-        "sample"
+        "investigation",
+        "student-government",
+        "politics"
       ],
       "body": [
-        "Articles with a date in the future stay hidden until that day. Articles with \"draft\": true stay hidden until you change it to false.",
-        "Set \"breaking\": true on a story to show a blue Breaking strip with its title across the top of the site."
+        "On paper, the results of the presidential race are clear: **Berat** won the presidency, **Ellona** secured the Vice President position, and **Din** took over as Secretary. But behind closed doors, a very different story is unfolding across hallway whispers.",
+        "## Elected Titles vs. Operational Power",
+        "While Din has officially assumed the duties of Secretary, Berat and Ellona currently hold status only as *elected* officials without full administrative handover. Rumors are circulating rapidly across campus that true operational power has not yet been transferred.",
+        "> Whispers suggest the old administration hasn't let go of the reins just yet.",
+        "## Shadow Leadership Until March?",
+        "According to multiple campus insiders, **Acting President Anastasija** (the former Vice President) and **Acting Vice-President Jusuf** (the former Secretary) intend to remain firmly in power behind the scenes. The rumor suggests their shadow regime will persist until they stop attending school around **March** as senior departure dates approach.",
+        "This leaves the student body questioning: Who is truly making the decisions for our school right now, and when will the newly elected leadership actually take the wheel?"
       ]
     }
   ]
