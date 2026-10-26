@@ -2,28 +2,28 @@
   "_help": "photo: file name of the picture, e.g. \"photos/ayse.jpg\". For the two acting positions, set show to false to hide that person from the site.",
   "secretary": {
     "role": "Secretary",
-    "name": "",
+    "name": "Din",
     "photo": ""
   },
   "president": {
     "role": "President-Elect",
-    "name": "",
+    "name": "Berat",
     "photo": ""
   },
   "vicePresident": {
     "role": "Vice-President-Elect",
-    "name": "",
+    "name": "Ellona",
     "photo": ""
   },
   "actingPresident": {
     "role": "Acting President",
-    "name": "",
+    "name": "Anastasija",
     "photo": "",
     "show": true
   },
   "actingVicePresident": {
     "role": "Acting Vice-President",
-    "name": "",
+    "name": "Jusuf",
     "photo": "",
     "show": true
   }
