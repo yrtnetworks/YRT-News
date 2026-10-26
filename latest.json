@@ -5,7 +5,7 @@
     "icon": "os_times-icon.png",
     "title": "Fiercly and Justly",
     "description": "After a fierce presidential race, organized by prof. Mukhtar, the winner has been announced. Berat won!",
-    "url": "",
+    "url": "https://yrtnetworks.github.io/YRT-News/os-times.html#article=fiercely-and-justly",
     "linkText": "Read the full story"
   },
   {
@@ -23,7 +23,7 @@
     "icon": "yahya_now-icon.png",
     "title": "Upcoming Exame:",
     "description": "The Biology Exame has been announced for the 28th of October - Wednesday. Good Luck!",
-    "url": "",
-    "linkText": "Read the full story"
+    "url": "https://yrtnetworks.github.io/YRT-News/yahya-now.html#tests",
+    "linkText": "More..."
   }
 ]
