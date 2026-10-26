@@ -3,8 +3,8 @@
     "source": "OS Times",
     "sourceClass": "feed-os",
     "icon": "os_times-icon.png",
-    "title": "Add an OS Times headline",
-    "description": "Write a short introduction to the OS Times story here.",
+    "title": "Fiercly and Justly",
+    "description": "After a fierce presidential race, organized by prof. Mukhtar, the winner has been announced. Berat won!",
     "url": "",
     "linkText": "Read the full story"
   },
@@ -12,8 +12,8 @@
     "source": "Y-Atlas",
     "sourceClass": "feed-atlas",
     "icon": "y-atlas-icon.png",
-    "title": "Add a Y-Atlas headline",
-    "description": "Write a short summary of the Y-Atlas article here.",
+    "title": "Smoking room?",
+    "description": "Now that Berat has won the presidential race, the students can't help but wonder if he truly meant what he promissed during the presidential debate, and how the teachers will respond to his 'revolutionary' ideas.",
     "url": "",
     "linkText": "Read the full story"
   },
@@ -21,9 +21,7 @@
     "source": "YRT Now",
     "sourceClass": "feed-yrt",
     "icon": "yahya_now-icon.png",
-    "title": "Add a YRT Now headline",
-    "description": "Add a network announcement or publication update here.",
-    "url": "",
-    "linkText": "Read more"
+    "title": "Upcoming Exame:",
+    "description": "The Biology Exame has been announced for the 28th of October - Wednesday. Good Luck!",
   }
 ]
