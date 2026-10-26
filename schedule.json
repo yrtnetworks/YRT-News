@@ -89,68 +89,68 @@
         {
           "time": "08:30 – 09:15",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Art",
+            "Sport",
+            "ICT",
+            "Macedonian",
+            "Macedonian"
           ]
         },
         {
-          "time": "09:20 – 10:05",
+          "time": "09:30 – 10:15",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Reading",
+            "Sport",
+            "Macedonian",
+            "Physics",
+            "Biology"
           ]
         },
         {
-          "time": "10:10 – 10:55",
+          "time": "10:20 – 11:05",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "English",
+            "Mathematics",
+            "Geography",
+            "History",
+            "English"
           ]
         },
         {
-          "time": "11:15 – 12:00",
+          "time": "11:10 – 11:55",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Chemistry",
+            "Sociology",
+            "Mathematics",
+            "Mathematics",
+            "Reading"
           ]
         },
         {
-          "time": "12:05 – 12:50",
+          "time": "12:20 – 13:05",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Biology",
+            "Turkish",
+            "Music",
+            "English",
+            "Sociology"
           ]
         },
         {
-          "time": "13:30 – 14:15",
+          "time": "13:10 – 13:55",
           "lessons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Turkish",
+            "Chemistry",
+            "Turkish",
+            "History",
+            "Physics"
           ]
         },
         {
-          "time": "14:20 – 15:05",
+          "time": "14:00 – 15:40",
           "lessons": [
-            "",
-            "",
+            "ICT",
+            "Macedonian",
             "",
             "",
             ""
