@@ -1,11 +1,113 @@
 {
-  "_help": "Tests are the same for every year. Add one { } block per test. date must be YYYY-MM-DD (past tests hide automatically). time, room and notes are optional. Leave 'tests' as [] to show 'No current tests.'",
-  "_example": {
-    "subject": "Subject name",
-    "date": "2026-12-01",
-    "time": "10:00",
-    "room": "Room",
-    "notes": "Anything students should know"
-  },
-  "tests": []
+  "_help": "test_season: 1 = show the tests below, 0 = show 'No current tests.' (the list is kept but hidden). hide_past: 1 = automatically hide tests whose date has passed, 0 = keep showing them. Each test: subject, grades (any text), and EITHER date (YYYY-MM-DD) OR from + to (YYYY-MM-DD) for a range. Optional: note, or dateText to override how the date is written. Tests show in the order listed.",
+  "test_season": 1,
+  "hide_past": 0,
+  "title": "First Term Exam Dates",
+  "subtitle": "2026–27 Academic Year",
+  "tests": [
+    {
+      "subject": "Mother Tongue",
+      "grades": "I, II, III, IV",
+      "date": "2026-10-21"
+    },
+    {
+      "subject": "Maths",
+      "grades": "I, II, III, IV",
+      "date": "2026-10-22"
+    },
+    {
+      "subject": "English",
+      "grades": "I, II, III, IV",
+      "date": "2026-10-26"
+    },
+    {
+      "subject": "Biology",
+      "grades": "I, II, III, IV",
+      "date": "2026-10-28"
+    },
+    {
+      "subject": "Chemistry",
+      "grades": "I, II, III, IV",
+      "date": "2026-10-30"
+    },
+    {
+      "subject": "Physics",
+      "grades": "I, II, III, IV-A",
+      "date": "2026-11-02"
+    },
+    {
+      "subject": "Turkish",
+      "grades": "I, II, III, IV",
+      "date": "2026-11-03"
+    },
+    {
+      "subject": "History",
+      "grades": "I, II, III, IV",
+      "date": "2026-11-05"
+    },
+    {
+      "subject": "ICT",
+      "grades": "I, II",
+      "date": "2026-11-06"
+    },
+    {
+      "subject": "Analytic Geometry",
+      "grades": "III-A",
+      "date": "2026-11-06"
+    },
+    {
+      "subject": "Business Studies",
+      "grades": "IV-A B",
+      "date": "2026-11-06"
+    },
+    {
+      "subject": "Macedonian",
+      "grades": "I, II, III, IV",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "ICT",
+      "grades": "IV-A B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "Sociology",
+      "grades": "II, IV-B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "Economy",
+      "grades": "IV-B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "Philosophy",
+      "grades": "IV-A B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "Law",
+      "grades": "IV-B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    },
+    {
+      "subject": "Management",
+      "grades": "IV-B",
+      "from": "2026-10-20",
+      "to": "2026-11-06",
+      "note": "Own lesson"
+    }
+  ]
 }
