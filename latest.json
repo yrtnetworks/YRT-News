@@ -1,0 +1,29 @@
+[
+  {
+    "source": "OS Times",
+    "sourceClass": "feed-os",
+    "icon": "os_times-icon.png",
+    "title": "Add an OS Times headline",
+    "description": "Write a short introduction to the OS Times story here.",
+    "url": "",
+    "linkText": "Read the full story"
+  },
+  {
+    "source": "Y-Atlas",
+    "sourceClass": "feed-atlas",
+    "icon": "y-atlas-icon.png",
+    "title": "Add a Y-Atlas headline",
+    "description": "Write a short summary of the Y-Atlas article here.",
+    "url": "",
+    "linkText": "Read the full story"
+  },
+  {
+    "source": "YRT Now",
+    "sourceClass": "feed-yrt",
+    "icon": "yahya_now-icon.png",
+    "title": "Add a YRT Now headline",
+    "description": "Add a network announcement or publication update here.",
+    "url": "",
+    "linkText": "Read more"
+  }
+]
