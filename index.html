@@ -4,24 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#172554">
+  <meta name="theme-color" content="#102044">
   <meta name="description" content="Discover the publications, reporting, and perspectives of the YRT media network.">
-  <title>YRT Network | Stories That Connect</title>
   <link rel="icon" type="image/png" href="yrt-icon.png">
+  <link rel="apple-touch-icon" href="yrt-icon.png">
+  <title>YRT Network — Stories That Connect</title>
 
   <style>
     :root {
-      --blue: #2457c5;
-      --blue-dark: #172554;
-      --purple: #7544c8;
-      --orange: #f28a32;
+      --blue: #2658d6;
+      --navy: #102044;
+      --purple: #7957ce;
+      --orange: #f5a052;
       --ink: #17243b;
-      --muted: #64748b;
-      --paper: #ffffff;
-      --background: #f5f7fb;
-      --border: #e3e8f1;
-      --radius: 16px;
-      --shadow: 0 12px 35px rgba(23, 36, 59, 0.07);
+      --muted: #68758b;
+      --background: #f4f6fa;
+      --white: #ffffff;
+      --border: #e2e7f0;
+      --radius: 18px;
+      --shadow: 0 18px 48px rgba(13, 30, 63, .10);
     }
 
     * {
@@ -30,14 +31,14 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 95px;
     }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--ink);
       background: var(--background);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
       line-height: 1.6;
     }
 
@@ -50,37 +51,44 @@
       font: inherit;
     }
 
-    .container {
-      width: min(1160px, 92%);
-      margin: 0 auto;
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
     }
 
-    /* Top announcement bar */
+    .container {
+      width: min(1180px, 91.5%);
+      margin-inline: auto;
+    }
+
+    /* Announcement */
 
     .topbar {
-      background: var(--blue-dark);
-      color: white;
-      font-size: 12px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      text-align: center;
       padding: 9px 16px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     .topbar span {
-      color: #f9a85d;
-      font-weight: 700;
+      padding-inline: 8px;
+      color: var(--orange);
     }
 
-    /* Header */
+    /* Header and real logo */
 
     header {
       position: sticky;
+      z-index: 20;
       top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, .96);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
     }
 
     .header-inner {
@@ -88,47 +96,53 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 26px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
       flex-shrink: 0;
     }
 
-    .brand-mark {
-      width: 49px;
-      height: 49px;
+    .brand-icon-wrap {
+      position: relative;
       display: grid;
       place-items: center;
-      color: white;
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      border-radius: 12px;
-      background: linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple) 70%,
-        var(--orange)
-      );
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: white;
+    }
+
+    .brand-icon-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 3px;
+      object-fit: contain;
     }
 
     .brand-name {
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
+      display: block;
+      font-size: 19px;
+      font-weight: 850;
+      letter-spacing: -.7px;
       line-height: 1.2;
     }
 
     .brand-caption {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      display: block;
       margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: 1.45px;
+      text-transform: uppercase;
     }
 
     nav {
@@ -138,10 +152,10 @@
     }
 
     nav a {
-      color: #475569;
-      font-size: 13px;
-      font-weight: 700;
-      transition: color 0.2s;
+      color: #68758b;
+      font-size: 12px;
+      font-weight: 750;
+      transition: color .2s;
     }
 
     nav a:hover {
@@ -149,78 +163,79 @@
     }
 
     .nav-cta {
-      color: white;
+      padding: 11px 15px;
+      color: white !important;
       background: var(--blue);
-      padding: 11px 16px;
-      border-radius: 8px;
+      border-radius: 9px;
     }
 
     .nav-cta:hover {
-      color: white;
-      background: var(--blue-dark);
+      background: var(--navy);
     }
 
     .menu-toggle {
       display: none;
-      background: white;
+      padding: 9px 12px;
       color: var(--ink);
+      background: white;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 12px;
+      border-radius: 9px;
       cursor: pointer;
     }
 
     /* Hero */
 
     .hero {
-      padding: 66px 0 54px;
+      position: relative;
+      overflow: hidden;
+      padding: 84px 0 76px;
       background:
         radial-gradient(
-          ellipse at 100% 0%,
-          rgba(117, 68, 200, 0.12),
-          transparent 37%
+          circle at 100% 0%,
+          #e9edff 0,
+          transparent 36%
         ),
-        radial-gradient(
-          ellipse at 0% 100%,
-          rgba(36, 87, 197, 0.08),
-          transparent 38%
-        ),
-        #ffffff;
+        white;
       border-bottom: 1px solid var(--border);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 58px;
+      grid-template-columns: 1.03fr .97fr;
       align-items: center;
+      gap: clamp(38px, 6vw, 80px);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 10px;
+      font-weight: 850;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 23px;
+      width: 24px;
       height: 3px;
-      border-radius: 5px;
+      border-radius: 4px;
       background: var(--orange);
     }
 
+    h1, h2, h3, p {
+      overflow-wrap: break-word;
+    }
+
     h1 {
-      font-size: clamp(42px, 5.6vw, 70px);
-      line-height: 1.04;
-      letter-spacing: -3.5px;
-      margin: 22px 0;
-      max-width: 690px;
+      max-width: 700px;
+      margin: 22px 0 20px;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 850;
+      line-height: .99;
+      letter-spacing: -.065em;
     }
 
     h1 .accent {
@@ -228,32 +243,32 @@
     }
 
     .hero-description {
+      max-width: 520px;
+      margin: 0;
       color: var(--muted);
-      max-width: 510px;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.9;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      gap: 12px;
+      margin-top: 29px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      border: 0;
-      border-radius: 9px;
-      padding: 14px 19px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
+      gap: 10px;
+      padding: 13px 17px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: transform .2s, background .2s;
     }
 
     .button:hover {
@@ -261,158 +276,189 @@
     }
 
     .button-primary {
-      background: var(--blue);
       color: white;
-      box-shadow: 0 7px 18px rgba(36, 87, 197, 0.2);
+      background: var(--blue);
+      box-shadow: 0 8px 21px rgba(38, 88, 214, .2);
     }
 
     .button-primary:hover {
-      background: var(--blue-dark);
+      background: var(--navy);
     }
 
     .button-secondary {
       background: white;
-      color: var(--ink);
-      border: 1px solid var(--border);
+      border-color: var(--border);
     }
 
-    /* Hero feature panel */
+    .button-secondary:hover {
+      border-color: var(--blue);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .hero-note span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4dbb90;
+      box-shadow: 0 0 0 4px rgba(77, 187, 144, .13);
+    }
+
+    /* Featured brand panel */
 
     .feature-panel {
-      min-height: 350px;
       position: relative;
+      min-height: 390px;
+      padding: 26px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 30px;
-      border-radius: 22px;
       color: white;
-      background: linear-gradient(
-        145deg,
-        #172554 0%,
-        #2457c5 55%,
-        #7544c8 100%
-      );
-      box-shadow: 0 25px 55px rgba(36, 58, 130, 0.2);
-    }
-
-    .feature-panel::before,
-    .feature-panel::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      pointer-events: none;
+      background: linear-gradient(145deg, #102044, #173a83);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
 
     .feature-panel::before {
+      content: "";
+      position: absolute;
       width: 340px;
       height: 340px;
-      right: -130px;
-      top: -130px;
+      top: -145px;
+      right: -90px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 36px rgba(255, 255, 255, .025),
+        0 0 0 72px rgba(255, 255, 255, .02);
     }
 
-    .feature-panel::after {
-      width: 250px;
-      height: 250px;
-      right: -65px;
-      top: -85px;
+    .feature-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .feature-top,
+    .feature-label {
+      padding: 7px 10px;
+      color: white;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 1.25px;
+    }
+
+    .feature-counter {
+      color: rgba(255, 255, 255, .65);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .feature-icon-stage {
+      min-height: 190px;
+      padding: 15px 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .feature-icon-card {
+      width: 150px;
+      height: 150px;
+      padding: 12px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 30px;
+      box-shadow: 0 24px 55px rgba(0, 0, 0, .2);
+      transform: rotate(-4deg);
+    }
+
     .feature-content {
       position: relative;
       z-index: 1;
     }
 
-    .feature-label {
-      display: inline-block;
-      padding: 7px 11px;
-      border-radius: 6px;
-      background: var(--orange);
-      color: #17243b;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-    }
-
-    .feature-symbol {
-      margin: 24px 0 20px;
-      font-size: 76px;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -7px;
-      opacity: 0.94;
-    }
-
     .feature-content h2 {
-      max-width: 360px;
-      font-size: 29px;
+      max-width: 380px;
+      margin: 0 0 9px;
+      font-size: clamp(23px, 2.5vw, 30px);
       line-height: 1.2;
-      letter-spacing: -1px;
-      margin: 0 0 12px;
+      letter-spacing: -.045em;
     }
 
     .feature-content p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 13px;
       margin: 0;
+      color: rgba(255, 255, 255, .7);
+      font-size: 12px;
     }
 
-    /* Shared section styles */
+    /* General sections */
 
     section {
-      padding: 74px 0;
+      padding: 78px 0;
     }
 
     .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
       margin-bottom: 30px;
     }
 
     .section-heading h2 {
-      font-size: clamp(28px, 3vw, 37px);
-      letter-spacing: -1.4px;
-      line-height: 1.2;
-      margin: 9px 0 0;
+      margin: 10px 0 0;
+      font-size: clamp(30px, 3.6vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -.055em;
     }
 
     .section-heading p {
+      max-width: 445px;
+      margin: 10px 0 0;
       color: var(--muted);
       font-size: 13px;
-      max-width: 430px;
-      margin: 9px 0 0;
+      line-height: 1.8;
     }
 
-    .text-link {
+    .text-link, .card-link {
       color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 850;
     }
 
-    .text-link:hover {
-      color: var(--purple);
-    }
-
-    /* Publication cards */
+    /* Publications */
 
     .publication-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
+      gap: 16px;
     }
 
     .publication-card {
+      min-height: 286px;
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: white;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 23px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .publication-card:hover {
@@ -421,108 +467,107 @@
     }
 
     .publication-logo {
-      width: 52px;
-      height: 52px;
+      width: 49px;
+      height: 49px;
+      margin-bottom: 23px;
       display: grid;
       place-items: center;
-      border-radius: 13px;
       color: white;
-      font-size: 17px;
+      border-radius: 14px;
+      font-size: 15px;
       font-weight: 900;
-      margin-bottom: 22px;
     }
 
-    .pub-blue {
-      background: var(--blue);
-    }
-
-    .pub-purple {
-      background: var(--purple);
-    }
-
-    .pub-orange {
-      background: var(--orange);
-      color: #17243b;
-    }
-
-    .pub-dark {
-      background: var(--blue-dark);
-    }
+    .pub-blue { background: var(--blue); }
+    .pub-purple { background: var(--purple); }
+    .pub-orange { background: var(--orange); color: var(--ink); }
+    .pub-dark { background: var(--navy); }
 
     .publication-card h3 {
-      font-size: 19px;
-      letter-spacing: -0.5px;
       margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -.55px;
     }
 
     .publication-card p {
-      min-height: 65px;
+      flex: 1;
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.75;
-      margin: 0 0 20px;
-    }
-
-    .card-link {
       font-size: 12px;
-      font-weight: 800;
-      color: var(--blue);
+      line-height: 1.8;
     }
 
-    /* Editorial statement */
+    /* About section */
 
     .mission-section {
       background: white;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-block: 1px solid var(--border);
     }
 
     .mission {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 70px;
+      grid-template-columns: .9fr 1.1fr;
       align-items: center;
+      gap: clamp(38px, 7vw, 85px);
     }
 
-    .mission-mark {
-      min-height: 250px;
+    .mission-art {
+      position: relative;
+      min-height: 340px;
       display: grid;
       place-items: center;
-      border-radius: 20px;
-      background: linear-gradient(
-        135deg,
-        rgba(36, 87, 197, 0.1),
-        rgba(117, 68, 200, 0.12),
-        rgba(242, 138, 50, 0.13)
-      );
+      overflow: hidden;
+      background: #edf1ff;
+      border: 1px solid var(--border);
+      border-radius: 23px;
     }
 
-    .mission-mark span {
-      font-size: clamp(70px, 10vw, 115px);
-      font-weight: 900;
-      letter-spacing: -10px;
-      background: linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple) 60%,
-        var(--orange)
-      );
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
+    .mission-art::before,
+    .mission-art::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(38, 88, 214, .18);
+      border-radius: 50%;
+    }
+
+    .mission-art::after {
+      width: 210px;
+      height: 210px;
+    }
+
+    .mission-icon {
+      position: relative;
+      z-index: 1;
+      width: 128px;
+      height: 128px;
+      padding: 12px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      transform: rotate(4deg);
     }
 
     .mission-copy h2 {
-      font-size: clamp(29px, 3.5vw, 42px);
-      letter-spacing: -1.8px;
-      line-height: 1.15;
       margin: 13px 0 17px;
+      font-size: clamp(30px, 3.8vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -.06em;
     }
 
     .mission-copy p {
+      margin: 0 0 14px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.9;
+    }
+
+    .mission-copy .button {
+      margin-top: 10px;
     }
 
     /* Latest stories */
@@ -530,36 +575,79 @@
     .stories-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
     .story-card {
+      overflow: hidden;
       background: white;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
     }
 
     .story-art {
-      height: 150px;
-      display: grid;
-      place-items: center;
-      font-size: 43px;
-      font-weight: 900;
+      position: relative;
+      height: 165px;
+      padding: 17px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      overflow: hidden;
       color: white;
     }
 
+    .story-art::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      top: -100px;
+      right: -30px;
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 24px rgba(255, 255, 255, .05),
+        0 0 0 48px rgba(255, 255, 255, .04);
+    }
+
     .story-art-blue {
-      background: linear-gradient(135deg, #172554, #2457c5);
+      background: linear-gradient(135deg, #102044, #2658d6);
     }
 
     .story-art-purple {
-      background: linear-gradient(135deg, #4c2b8c, #9869df);
+      background: linear-gradient(135deg, #442c83, #8c6be8);
     }
 
     .story-art-orange {
-      background: linear-gradient(135deg, #d96b1c, #ffbb72);
-      color: #17243b;
+      color: var(--ink);
+      background: linear-gradient(135deg, #ce6d28, #f7ae62);
+    }
+
+    .story-art-label, .story-art-mark {
+      position: relative;
+      z-index: 1;
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .story-art-icon {
+      position: relative;
+      z-index: 1;
+      width: 39px;
+      height: 39px;
+      padding: 4px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border-radius: 10px;
     }
 
     .story-body {
@@ -567,32 +655,33 @@
     }
 
     .story-category {
-      color: var(--purple);
-      font-size: 10px;
+      color: var(--blue);
+      font-size: 9px;
       font-weight: 900;
       letter-spacing: 1.4px;
       text-transform: uppercase;
     }
 
     .story-body h3 {
-      font-size: 18px;
-      line-height: 1.4;
       margin: 10px 0;
+      font-size: 17px;
+      line-height: 1.42;
     }
 
     .story-body p {
-      color: var(--muted);
-      font-size: 13px;
       margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
     }
 
     .demo-note {
+      margin-top: 19px;
       color: var(--muted);
-      font-size: 12px;
-      margin-top: 22px;
+      font-size: 10px;
     }
 
-    /* Contact strip */
+    /* Contact */
 
     .contact-section {
       padding-top: 0;
@@ -600,57 +689,56 @@
 
     .contact-panel {
       position: relative;
-      overflow: hidden;
+      isolation: isolate;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 30px;
-      padding: 38px;
-      border-radius: 20px;
+      justify-content: space-between;
+      gap: 28px;
+      overflow: hidden;
+      padding: 39px;
+      border-radius: 22px;
+      background: var(--navy);
       color: white;
-      background: var(--blue-dark);
     }
 
     .contact-panel::after {
       content: "";
       position: absolute;
-      width: 240px;
-      height: 240px;
-      right: 15%;
-      top: -170px;
+      z-index: -1;
+      width: 290px;
+      height: 290px;
+      top: -190px;
+      right: 18%;
+      border: 34px solid rgba(140, 107, 232, .28);
       border-radius: 50%;
-      border: 30px solid rgba(117, 68, 200, 0.3);
-    }
-
-    .contact-copy {
-      position: relative;
-      z-index: 1;
     }
 
     .contact-copy h2 {
-      font-size: 29px;
-      letter-spacing: -1px;
-      margin: 0 0 8px;
+      margin: 0 0 7px;
+      font-size: clamp(24px, 3vw, 33px);
+      line-height: 1.2;
     }
 
     .contact-copy p {
-      color: #cbd5e1;
-      font-size: 13px;
       margin: 0;
+      color: #cbd5e1;
+      font-size: 12px;
     }
 
     .contact-panel .button {
-      position: relative;
-      z-index: 1;
-      background: var(--orange);
-      color: #17243b;
       flex-shrink: 0;
+      background: var(--orange);
+      color: var(--ink);
+    }
+
+    .contact-panel .button:hover {
+      background: white;
     }
 
     /* Footer */
 
     footer {
-      padding: 38px 0 25px;
+      padding: 38px 0 23px;
       background: white;
       border-top: 1px solid var(--border);
     }
@@ -658,37 +746,38 @@
     .footer-main {
       display: flex;
       justify-content: space-between;
-      align-items: start;
-      gap: 35px;
+      align-items: flex-start;
+      gap: 36px;
       padding-bottom: 28px;
     }
 
     .footer-about {
-      max-width: 320px;
+      max-width: 340px;
     }
 
     .footer-about p {
+      margin-top: 15px;
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
+      font-size: 11px;
+      line-height: 1.9;
     }
 
     .footer-links {
       display: flex;
-      gap: 50px;
       flex-wrap: wrap;
+      gap: 54px;
     }
 
     .footer-group h3 {
-      font-size: 12px;
-      margin: 0 0 13px;
+      margin: 0 0 12px;
+      font-size: 11px;
     }
 
     .footer-group a {
       display: block;
-      color: var(--muted);
-      font-size: 12px;
       margin: 8px 0;
+      color: var(--muted);
+      font-size: 11px;
     }
 
     .footer-group a:hover {
@@ -698,41 +787,60 @@
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
-      padding-top: 20px;
+      gap: 16px;
+      padding-top: 18px;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: 11px;
+      font-size: 10px;
     }
 
-    /* Mobile layout */
+    /* Responsive layout */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .hero-grid {
-        grid-template-columns: 1fr 0.85fr;
-        gap: 28px;
+        gap: 30px;
       }
 
       .publication-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .mission {
-        gap: 35px;
-      }
-
       nav {
         gap: 16px;
       }
+
+      .feature-panel {
+        min-height: 370px;
+      }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 76px;
+      }
+
       .header-inner {
         min-height: 72px;
       }
 
+      .brand-icon-wrap {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-caption {
+        font-size: 8px;
+      }
+
       .menu-toggle {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
       }
 
       nav {
@@ -741,7 +849,7 @@
         top: 72px;
         left: 0;
         right: 0;
-        padding: 20px 4%;
+        padding: 13px 4.25% 20px;
         background: white;
         border-bottom: 1px solid var(--border);
         box-shadow: var(--shadow);
@@ -755,66 +863,82 @@
       }
 
       nav a {
-        padding: 13px 4px;
+        padding: 12px 4px;
       }
 
       nav .nav-cta {
+        margin-top: 7px;
         text-align: center;
-        margin-top: 8px;
       }
 
       .hero {
-        padding: 48px 0 40px;
+        padding: 52px 0 45px;
       }
 
-      .hero-grid,
-      .mission {
+      .hero-grid, .mission {
         grid-template-columns: 1fr;
       }
 
       h1 {
-        letter-spacing: -2px;
+        font-size: clamp(45px, 12vw, 64px);
+      }
+
+      .hero-description {
+        font-size: 14px;
       }
 
       .feature-panel {
-        min-height: 310px;
+        min-height: 335px;
+        padding: 22px;
+      }
+
+      .feature-icon-stage {
+        min-height: 155px;
+      }
+
+      .feature-icon-card {
+        width: 118px;
+        height: 118px;
       }
 
       section {
-        padding: 53px 0;
+        padding: 56px 0;
       }
 
       .section-heading {
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
+        gap: 13px;
       }
 
-      .publication-grid,
-      .stories-grid {
+      .publication-grid, .stories-grid {
         grid-template-columns: 1fr;
       }
 
-      .publication-card p {
-        min-height: auto;
+      .publication-card {
+        min-height: 0;
       }
 
-      .mission-mark {
-        min-height: 180px;
+      .mission-art {
+        min-height: 245px;
+      }
+
+      .story-art {
+        height: 150px;
       }
 
       .contact-panel {
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
-        padding: 28px;
+        padding: 29px;
       }
 
-      .footer-main,
-      .footer-bottom {
+      .footer-main, .footer-bottom {
         flex-direction: column;
       }
 
       .footer-links {
-        gap: 28px;
+        gap: 36px;
       }
     }
 
@@ -823,10 +947,8 @@
         scroll-behavior: auto;
       }
 
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -840,21 +962,19 @@
   <header>
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="YRT Network home">
-        <div class="brand-mark">YRT</div>
-        <div>
-          <div class="brand-name">YRT Network</div>
-          <div class="brand-caption">Media &amp; Publications</div>
-        </div>
+        <span class="brand-icon-wrap">
+          <img class="brand-icon-image" src="yrt-icon.png" alt="YRT Network icon">
+        </span>
+        <span>
+          <span class="brand-name">YRT Network</span>
+          <span class="brand-caption">Media &amp; Publications</span>
+        </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-expanded="false"
-        aria-controls="main-nav"
-        aria-label="Open navigation menu"
-      >
-        ☰ Menu
+      <button class="menu-toggle" id="menu-toggle"
+        aria-expanded="false" aria-controls="main-nav"
+        aria-label="Open navigation menu">
+        ☰ <span>Menu</span>
       </button>
 
       <nav id="main-nav" aria-label="Main navigation">
@@ -874,8 +994,8 @@
           <div class="eyebrow">Introducing YRT Network</div>
 
           <h1>
-            Stories that matter.<br>
-            <span class="accent">Perspectives that connect.</span>
+            Independent voices.<br>
+            <span class="accent">One bigger picture.</span>
           </h1>
 
           <p class="hero-description">
@@ -892,19 +1012,28 @@
               Discover YRT
             </a>
           </div>
+
+          <div class="hero-note">
+            <span aria-hidden="true"></span>
+            One network, many points of view
+          </div>
         </div>
 
         <div class="feature-panel">
           <div class="feature-top">
-            <span class="feature-label">THE YRT NETWORK</span>
-            <div class="feature-symbol">YRT.</div>
+            <span class="feature-label">The YRT network</span>
+            <span class="feature-counter">01 / 04</span>
+          </div>
+
+          <div class="feature-icon-stage">
+            <div class="feature-icon-card">
+              <img class="brand-icon-image" src="yrt-icon.png" alt="YRT Network icon">
+            </div>
           </div>
 
           <div class="feature-content">
             <h2>Four publications. One connected network.</h2>
-            <p>
-              Different perspectives, brought together under one identity.
-            </p>
+            <p>Different perspectives, brought together under one identity.</p>
           </div>
         </div>
       </div>
@@ -916,9 +1045,7 @@
           <div>
             <div class="eyebrow">Our publications</div>
             <h2>Meet the network.</h2>
-            <p>
-              Explore the publications that give YRT its distinctive voice.
-            </p>
+            <p>Four distinct voices. Find the publication that speaks to your curiosity.</p>
           </div>
           <a class="text-link" href="#contact">Work with YRT ↗</a>
         </div>
@@ -927,49 +1054,29 @@
           <article class="publication-card">
             <div class="publication-logo pub-blue">OS</div>
             <h3>OS Times</h3>
-            <p>
-              Reporting, news, and perspectives from across the stories
-              that matter.
-            </p>
-            <a class="card-link" href="#contact">
-              Explore OS Times ↗
-            </a>
+            <p>Reporting, news, and perspectives from across the stories that matter.</p>
+            <a class="card-link" href="#contact">Explore OS Times →</a>
           </article>
 
           <article class="publication-card">
             <div class="publication-logo pub-purple">YA</div>
             <h3>Y-Atlas</h3>
-            <p>
-              Discover new perspectives, ideas, and subjects worth
-              exploring.
-            </p>
-            <a class="card-link" href="#contact">
-              Explore Y-Atlas ↗
-            </a>
+            <p>Discover new perspectives, ideas, and subjects worth exploring.</p>
+            <a class="card-link" href="#contact">Explore Y-Atlas →</a>
           </article>
 
           <article class="publication-card">
             <div class="publication-logo pub-orange">YN</div>
             <h3>Yahya Now</h3>
-            <p>
-              Updates and stories designed to keep readers connected
-              with what's happening.
-            </p>
-            <a class="card-link" href="#contact">
-              Explore Yahya Now ↗
-            </a>
+            <p>Updates and stories designed to keep readers connected with what's happening.</p>
+            <a class="card-link" href="#contact">Explore Yahya Now →</a>
           </article>
 
           <article class="publication-card">
             <div class="publication-logo pub-dark">DY</div>
             <h3>The Daily Y</h3>
-            <p>
-              A home for regular updates, thoughtful stories, and
-              fresh perspectives.
-            </p>
-            <a class="card-link" href="#contact">
-              Explore The Daily Y ↗
-            </a>
+            <p>A home for regular updates, thoughtful stories, and fresh perspectives.</p>
+            <a class="card-link" href="#contact">Explore The Daily Y →</a>
           </article>
         </div>
       </div>
@@ -977,20 +1084,21 @@
 
     <section class="mission-section" id="about">
       <div class="container mission">
-        <div class="mission-mark" aria-hidden="true">
-          <span>YRT</span>
+        <div class="mission-art" aria-hidden="true">
+          <div class="mission-icon">
+            <img class="brand-icon-image" src="yrt-icon.png" alt="">
+          </div>
         </div>
 
         <div class="mission-copy">
           <div class="eyebrow">About the network</div>
-          <h2>One identity. Multiple perspectives.</h2>
+          <h2>One identity.<br>Multiple perspectives.</h2>
           <p>
             YRT brings its publications together in one shared digital
             home. Each publication can develop its own character while
             contributing to a wider network.
           </p>
           <p>
-            This is the starting point for the YRT digital presence.
             As the network grows, this space can introduce its team,
             editorial principles, projects, and publications.
           </p>
@@ -1007,53 +1115,46 @@
           <div>
             <div class="eyebrow">From across the network</div>
             <h2>The latest from YRT.</h2>
-            <p>
-              A dedicated space for featured articles and updates
-              from our publications.
-            </p>
+            <p>A dedicated space for featured articles and updates from our publications.</p>
           </div>
         </div>
 
         <div class="stories-grid">
           <article class="story-card">
             <div class="story-art story-art-blue" aria-hidden="true">
-              OS
+              <span class="story-art-label">On the record</span>
+              <span class="story-art-mark">OS TIMES</span>
             </div>
             <div class="story-body">
               <div class="story-category">OS Times · Featured</div>
               <h3>Your next featured story goes here.</h3>
-              <p>
-                Replace this sample card with a real article title and
-                a short introduction for your readers.
-              </p>
+              <p>Replace this sample card with a real article title and a short introduction for your readers.</p>
             </div>
           </article>
 
           <article class="story-card">
             <div class="story-art story-art-purple" aria-hidden="true">
-              Y-A
+              <span class="story-art-label">Fresh perspectives</span>
+              <span class="story-art-mark">Y—ATLAS</span>
             </div>
             <div class="story-body">
               <div class="story-category">Y-Atlas · Perspectives</div>
               <h3>Ideas and perspectives worth exploring.</h3>
-              <p>
-                Introduce an article from Y-Atlas here, with a summary
-                and a link to the full story.
-              </p>
+              <p>Introduce an article from Y-Atlas here, with a summary and a link to the full story.</p>
             </div>
           </article>
 
           <article class="story-card">
             <div class="story-art story-art-orange" aria-hidden="true">
-              YRT
+              <span class="story-art-label">Network update</span>
+              <span class="story-art-icon">
+                <img class="brand-icon-image" src="yrt-icon.png" alt="">
+              </span>
             </div>
             <div class="story-body">
               <div class="story-category">YRT · Network update</div>
               <h3>What's new across the YRT network?</h3>
-              <p>
-                Use this space for a network announcement, project,
-                or publication update.
-              </p>
+              <p>Use this space for a network announcement, project, or publication update.</p>
             </div>
           </article>
         </div>
@@ -1070,14 +1171,9 @@
         <div class="contact-panel">
           <div class="contact-copy">
             <h2>Let's connect with YRT.</h2>
-            <p>
-              Have a question, an idea, or an inquiry for the network?
-            </p>
+            <p>Have a question, an idea, or an inquiry for the network?</p>
           </div>
-          <a
-            class="button"
-            href="mailto:contact@your-domain.example"
-          >
+          <a class="button" href="mailto:contact@your-domain.example">
             Contact the network ↗
           </a>
         </div>
@@ -1089,13 +1185,16 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-about">
-          <a class="brand" href="#home">
-            <div class="brand-mark">YRT</div>
-            <div>
-              <div class="brand-name">YRT Network</div>
-              <div class="brand-caption">Media &amp; Publications</div>
-            </div>
+          <a class="brand" href="#home" aria-label="YRT Network home">
+            <span class="brand-icon-wrap">
+              <img class="brand-icon-image" src="yrt-icon.png" alt="YRT Network icon">
+            </span>
+            <span>
+              <span class="brand-name">YRT Network</span>
+              <span class="brand-caption">Media &amp; Publications</span>
+            </span>
           </a>
+
           <p>
             One shared home for the YRT network and its publications.
             Stories, perspectives, and ideas connected by a common identity.
@@ -1131,12 +1230,16 @@
 
     menuToggle.addEventListener("click", () => {
       const isOpen = mainNav.classList.toggle("open");
+
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
       );
-      menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+
+      menuToggle.innerHTML = isOpen
+        ? "✕ <span>Close</span>"
+        : "☰ <span>Menu</span>";
     });
 
     mainNav.querySelectorAll("a").forEach((link) => {
@@ -1144,7 +1247,7 @@
         mainNav.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.setAttribute("aria-label", "Open navigation menu");
-        menuToggle.textContent = "☰ Menu";
+        menuToggle.innerHTML = "☰ <span>Menu</span>";
       });
     });
 
