@@ -1,0 +1,48 @@
+{
+  "_help": "Add one { } block per article inside 'articles'. Required: id (unique, lowercase, no spaces, e.g. 'berat-wins'), title, date (YYYY-MM-DD). Optional: summary (shown on cards), category (becomes a filter button), author, image (file name), imageAlt, imageCaption, tags (list), featured (true = lead story), breaking (true = blue strip at the top), draft (true = hidden), body (list: each string is a paragraph; '## text' = sub-heading; '> text' = pull quote; **bold** works). Articles dated in the future stay hidden until that day.",
+  "articles": [
+    {
+      "id": "sample-how-to-write-an-article",
+      "title": "Sample story: how to write an article",
+      "summary": "This sample shows every part of an article. Edit it or delete it, then add your own stories.",
+      "category": "Campus",
+      "author": "OS Times Staff",
+      "date": "2026-10-26",
+      "image": "",
+      "imageAlt": "",
+      "imageCaption": "",
+      "featured": true,
+      "breaking": false,
+      "draft": false,
+      "tags": [
+        "sample",
+        "guide"
+      ],
+      "body": [
+        "The **body** is a list. Each line in the list is one paragraph, and you can wrap words in double asterisks to make them bold.",
+        "## Sub-headings",
+        "A line that starts with two hashes and a space becomes a sub-heading, like the one above.",
+        "> A line that starts with a greater-than sign and a space becomes a pull quote.",
+        "Add a picture by putting its file name in \"image\", for example \"photos/story.jpg\"."
+      ]
+    },
+    {
+      "id": "sample-scheduling-and-drafts",
+      "title": "Sample story: scheduling and drafts",
+      "summary": "Set a future date to publish later, or mark an article as a draft to hide it.",
+      "category": "Sports",
+      "author": "OS Times Staff",
+      "date": "2026-10-25",
+      "featured": false,
+      "breaking": false,
+      "draft": false,
+      "tags": [
+        "sample"
+      ],
+      "body": [
+        "Articles with a date in the future stay hidden until that day. Articles with \"draft\": true stay hidden until you change it to false.",
+        "Set \"breaking\": true on a story to show a blue Breaking strip with its title across the top of the site."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f2a37">
+<link rel="icon" type="image/png" href="yrt-icon.png">
+<title>OS Times | Breaking News & Campus Happenings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#1f2a37;--steel:#566a7f;--mist:#e1e7ee;--fog:#f2f5f8;--azure:#2358b8;--line:#c3cdd8;--serif:"Newsreader",Georgia,serif;--sans:"Instrument Sans",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fog);color:var(--slate);font-family:var(--sans);font-size:17px;line-height:1.55}
+a{color:inherit}
+h1,h2,h3,p{margin-top:0;overflow-wrap:break-word}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--azure);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+
+/* Breaking strip */
+#breaking{background:var(--azure);color:#fff;padding:9px clamp(16px,4vw,48px);font-weight:600}
+#breaking a{text-decoration-thickness:2px;text-underline-offset:3px}
+
+/* Masthead: slate band, wordmark in the OS Times italic serif */
+.mast{display:flex;align-items:center;flex-wrap:wrap;gap:12px clamp(16px,3vw,36px);background:var(--slate);color:var(--fog);padding:clamp(18px,3vw,34px) clamp(16px,4vw,48px)}
+.brand{display:flex;align-items:center;gap:clamp(12px,2vw,22px);text-decoration:none}
+.logo{width:clamp(64px,9vw,112px);height:auto;display:block}
+.word{font-family:var(--serif);font-style:italic;font-weight:800;font-size:clamp(46px,8vw,96px);line-height:.95;letter-spacing:-.03em}
+.tag{flex:1 1 240px;margin:0;max-width:24em;color:#b9c6d4}
+.home{margin-left:auto;padding:9px 18px;border:2px solid #7f93a8;border-radius:999px;text-decoration:none;font-weight:600}
+.home:hover{background:var(--fog);color:var(--slate)}
+
+/* Toolbar */
+.tools{position:sticky;top:0;z-index:10;display:grid;gap:10px;padding:12px clamp(16px,4vw,48px);background:rgba(225,231,238,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.row1{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.search{flex:1 1 260px;display:flex;align-items:center;background:#fff;border:1.5px solid var(--steel);border-radius:10px}
+.search input{flex:1;min-width:0;padding:10px 14px;border:0;background:transparent;font:inherit;color:inherit}
+.search button{border:0;background:none;padding:0 14px;font-size:20px;cursor:pointer;color:var(--steel)}
+label.sort{display:flex;align-items:center;gap:8px;font-weight:600}
+select{padding:9px 12px;border:1.5px solid var(--steel);border-radius:10px;background:#fff;font:inherit;color:inherit}
+.seg{display:flex;border:1.5px solid var(--steel);border-radius:10px;overflow:hidden}
+.seg button{padding:9px 14px;border:0;background:#fff;font:inherit;font-weight:600;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--slate);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{padding:6px 14px;border:1.5px solid var(--steel);border-radius:999px;background:transparent;font:inherit;font-weight:600;cursor:pointer}
+.chips button:hover{background:#fff}
+.chips button[aria-pressed="true"]{background:var(--azure);border-color:var(--azure);color:#fff}
+
+main{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(16px,4vw,48px) 60px}
+.count{margin:0 0 18px;color:var(--steel);font-weight:600}
+.clear{margin-left:8px;border:0;background:none;color:var(--azure);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+
+/* Image or placeholder */
+.pic{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--mist)}
+.ph{display:grid;place-items:center;aspect-ratio:16/10;background:linear-gradient(135deg,#cfd9e4,#aebdcc);color:var(--slate);font-family:var(--serif);font-style:italic;font-weight:800;font-size:clamp(40px,6vw,72px)}
+.cat{color:var(--azure);font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--steel);font-size:15px}
+
+/* Lead story */
+.lead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center;margin-bottom:clamp(28px,4vw,48px);padding-bottom:clamp(28px,4vw,48px);border-bottom:2px solid var(--slate);text-decoration:none}
+.lead h2{margin:8px 0 12px;font-family:var(--serif);font-weight:800;font-size:clamp(32px,5vw,58px);line-height:1.04;letter-spacing:-.02em}
+.lead:hover h2{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--azure)}
+.lead p.sum{font-size:clamp(18px,2vw,22px);margin-bottom:12px}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:clamp(20px,3vw,34px)}
+.card{display:flex;flex-direction:column;gap:10px;text-decoration:none}
+.card .pic,.card .ph{border-radius:12px}
+.card h3{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.2vw,27px);line-height:1.12;letter-spacing:-.01em}
+.card:hover h3{text-decoration:underline;text-decoration-color:var(--azure);text-decoration-thickness:2px;text-underline-offset:4px}
+.card p.sum{margin:0;color:#34414f}
+.grid.list{grid-template-columns:1fr;gap:0}
+.list .card{flex-direction:row;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.list .card>.pic,.list .card>.ph{width:200px;flex:0 0 200px;aspect-ratio:4/3;font-size:36px}
+.list .card>div{min-width:0}
+
+.more{display:block;margin:34px auto 0;padding:12px 28px;border:2px solid var(--slate);border-radius:999px;background:transparent;font:inherit;font-weight:700;cursor:pointer}
+.more:hover{background:var(--slate);color:var(--fog)}
+.empty{padding:34px;border:2px dashed var(--steel);border-radius:14px;font-family:var(--serif);font-size:24px;font-weight:600}
+
+/* Article page */
+.back{display:inline-block;margin-bottom:22px;font-weight:700;text-decoration:none;color:var(--azure)}
+.back:hover{text-decoration:underline}
+.art{max-width:44rem;margin:0 auto}
+.art h1{margin:6px 0 14px;font-family:var(--serif);font-weight:800;font-size:clamp(36px,6vw,66px);line-height:1.02;letter-spacing:-.025em}
+.art .dek{font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.35;color:#34414f;margin-bottom:18px}
+.art .byline{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;padding:12px 0;border-block:1px solid var(--line);margin-bottom:24px;color:var(--steel)}
+.art .byline strong{color:var(--slate)}
+.copy{margin-left:auto;padding:5px 12px;border:1.5px solid var(--steel);border-radius:999px;background:transparent;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.art figure{margin:0 0 28px}
+.art figure .pic{border-radius:12px;aspect-ratio:16/9}
+.art figcaption{margin-top:8px;font-size:15px;color:var(--steel)}
+.body p{font-family:var(--serif);font-size:clamp(19px,2vw,21px);line-height:1.7;margin-bottom:1.2em}
+.body h2{margin:1.6em 0 .4em;font-family:var(--serif);font-size:30px;line-height:1.15}
+.body blockquote{margin:1.6em 0;padding:4px 0 4px 22px;border-left:5px solid var(--azure);font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.35}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;padding:0;list-style:none}
+.tags button{padding:4px 12px;border:1.5px solid var(--line);border-radius:999px;background:#fff;font:inherit;font-size:15px;cursor:pointer}
+.more-h{max-width:1240px;margin:56px auto 18px;padding-top:24px;border-top:2px solid var(--slate);font-family:var(--serif);font-size:32px}
+
+footer{padding:24px clamp(16px,4vw,48px) 40px;color:var(--steel);border-top:1px solid var(--line)}
+
+@media(max-width:760px){
+ .lead{grid-template-columns:1fr}
+ .home{margin-left:0}
+ .list .card{flex-direction:column}
+ .list .card>.pic,.list .card>.ph{width:100%;flex:none;aspect-ratio:16/10}
+ .tools{position:static}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to stories</a>
+<div id="breaking" hidden></div>
+
+<header class="mast">
+  <a class="brand" href="os-times.html" aria-label="OS Times home">
+    <img class="logo" src="os_times-icon.png" alt="">
+    <span class="word">OS Times</span>
+  </a>
+  <p class="tag">Breaking news and campus happenings at Yahya Kemal College–Struga.</p>
+  <a class="home" href="index.html">YRT Network</a>
+</header>
+
+<div class="tools" id="tools">
+  <div class="row1">
+    <div class="search" role="search">
+      <input id="q" type="search" placeholder="Search stories, authors or tags" aria-label="Search stories">
+      <button id="qclear" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+    <label class="sort">Sort by
+      <select id="sort">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="title">Title A–Z</option>
+        <option value="read">Longest read</option>
+      </select>
+    </label>
+    <div class="seg" role="group" aria-label="Layout">
+      <button type="button" id="v-grid" aria-pressed="true">Cards</button>
+      <button type="button" id="v-list" aria-pressed="false">List</button>
+    </div>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+</div>
+
+<main id="main">
+  <section id="list-view">
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="lead"></div>
+    <div class="grid" id="grid"></div>
+    <button class="more" id="more" type="button" hidden>Show more stories</button>
+  </section>
+  <section id="article-view" hidden></section>
+</main>
+
+<footer>© <span id="yr"></span> OS Times, part of YRT Network · page build 1</footer>
+
+<script>
+const PAGE = 9;
+const st = {q: "", cat: "All", sort: "newest", view: "grid", shown: PAGE};
+let all = [];
+const $ = id => document.getElementById(id);
+function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
+function rich(node, str) {
+  String(str).split(/(\*\*[^*]+\*\*)/).forEach(p => {
+    if (/^\*\*[^*]+\*\*$/.test(p)) node.append(el("strong", "", p.slice(2, -2)));
+    else if (p) node.append(document.createTextNode(p));
+  });
+  return node;
+}
+const fmtDate = d => new Date(d + "T00:00").toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+const shortDate = d => new Date(d + "T00:00").toLocaleDateString("en-GB", {day: "numeric", month: "short"});
+const bodyText = a => (a.body || []).flat().join(" ");
+const mins = a => Math.max(1, Math.round(bodyText(a).split(/\s+/).filter(Boolean).length / 200));
+
+function pic(a, big) {
+  if (a.image) { const i = el("img", "pic"); i.src = a.image; i.alt = a.imageAlt || ""; if (!big) i.loading = "lazy"; return i; }
+  return el("div", "ph", (a.category || "OS").charAt(0));
+}
+function meta(a) {
+  const m = el("div", "meta");
+  m.append(el("span", "", shortDate(a.date)), el("span", "", mins(a) + " min read"));
+  if (a.author) m.append(el("span", "", "By " + a.author));
+  return m;
+}
+function card(a) {
+  const c = el("a", "card"); c.href = "#article=" + encodeURIComponent(a.id);
+  const t = el("div");
+  t.append(el("span", "cat", a.category || "News"), el("h3", "", a.title), el("p", "sum", a.summary || ""), meta(a));
+  c.append(pic(a), t);
+  return c;
+}
+function leadCard(a) {
+  const c = el("a", "lead"); c.href = "#article=" + encodeURIComponent(a.id);
+  const t = el("div");
+  t.append(el("span", "cat", a.category || "News"), el("h2", "", a.title), el("p", "sum", a.summary || ""), meta(a));
+  c.append(t, pic(a, true));
+  return c;
+}
+
+function filtered() {
+  const q = st.q.trim().toLowerCase();
+  let l = all.filter(a => (st.cat === "All" || a.category === st.cat) &&
+    (!q || [a.title, a.summary, a.author, a.category, (a.tags || []).join(" "), bodyText(a)].join(" ").toLowerCase().includes(q)));
+  const by = {
+    newest: (a, b) => b.date.localeCompare(a.date),
+    oldest: (a, b) => a.date.localeCompare(b.date),
+    title: (a, b) => a.title.localeCompare(b.title),
+    read: (a, b) => mins(b) - mins(a)
+  }[st.sort];
+  return l.sort(by);
+}
+
+function renderChips() {
+  const cats = ["All", ...[...new Set(all.map(a => a.category).filter(Boolean))].sort()];
+  $("chips").replaceChildren(...cats.map(c => {
+    const b = el("button", "", c); b.type = "button"; b.setAttribute("aria-pressed", String(c === st.cat));
+    b.onclick = () => { st.cat = c; st.shown = PAGE; renderChips(); renderList(); };
+    return b;
+  }));
+}
+function renderList() {
+  const list = filtered();
+  const active = st.q || st.cat !== "All";
+  $("qclear").hidden = !st.q;
+  const count = $("count");
+  count.textContent = list.length === all.length ? all.length + (all.length === 1 ? " story" : " stories") : "Showing " + list.length + " of " + all.length + " stories";
+  if (active) { const c = el("button", "clear", "Clear filters"); c.type = "button"; c.onclick = () => { st.q = ""; st.cat = "All"; $("q").value = ""; st.shown = PAGE; renderChips(); renderList(); }; count.append(c); }
+  let rest = list, lead = null;
+  if (!active && st.sort === "newest" && st.view === "grid" && list.length > 1) {
+    lead = list.find(a => a.featured) || list[0];
+    rest = list.filter(a => a !== lead);
+  }
+  $("lead").replaceChildren(...(lead ? [leadCard(lead)] : []));
+  const grid = $("grid");
+  grid.className = "grid" + (st.view === "list" ? " list" : "");
+  if (!list.length) { grid.replaceChildren(el("p", "empty", all.length ? "No stories match. Try a different search or category." : "No stories have been published yet.")); $("more").hidden = true; return; }
+  grid.replaceChildren(...rest.slice(0, st.shown).map(card));
+  $("more").hidden = rest.length <= st.shown;
+}
+
+function renderArticle(id) {
+  const a = all.find(x => x.id === id), v = $("article-view");
+  $("list-view").hidden = true; $("tools").hidden = true; v.hidden = false;
+  v.replaceChildren();
+  const back = el("a", "back", "← All stories"); back.href = "#";
+  v.append(back);
+  if (!a) { v.append(el("p", "empty", "That story isn’t available.")); document.title = "OS Times"; return; }
+  document.title = a.title + " | OS Times";
+  const art = el("article", "art");
+  art.append(el("span", "cat", a.category || "News"), el("h1", "", a.title));
+  if (a.summary) art.append(el("p", "dek", a.summary));
+  const by = el("div", "byline");
+  if (a.author) { const s = el("span"); s.append("By ", el("strong", "", a.author)); by.append(s); }
+  by.append(el("span", "", fmtDate(a.date)), el("span", "", mins(a) + " min read"));
+  const cp = el("button", "copy", "Copy link"); cp.type = "button";
+  cp.onclick = async () => { try { await navigator.clipboard.writeText(location.href); cp.textContent = "Link copied"; } catch (e) { cp.textContent = "Copy from the address bar"; } };
+  by.append(cp); art.append(by);
+  if (a.image) { const f = el("figure"); f.append(pic(a, true)); if (a.imageCaption) f.append(el("figcaption", "", a.imageCaption)); art.append(f); }
+  const body = el("div", "body");
+  (a.body || []).forEach(x => {
+    const s = String(x);
+    if (s.startsWith("## ")) body.append(el("h2", "", s.slice(3)));
+    else if (s.startsWith("> ")) body.append(rich(el("blockquote"), s.slice(2)));
+    else body.append(rich(el("p"), s));
+  });
+  art.append(body);
+  if ((a.tags || []).length) {
+    const ul = el("ul", "tags");
+    a.tags.forEach(t => { const li = el("li"), b = el("button", "", "#" + t); b.type = "button"; b.onclick = () => { st.q = t; $("q").value = t; location.hash = ""; }; li.append(b); ul.append(li); });
+    art.append(ul);
+  }
+  v.append(art);
+  const more = all.filter(x => x.id !== a.id).sort((p, q) => (q.category === a.category) - (p.category === a.category) || q.date.localeCompare(p.date)).slice(0, 3);
+  if (more.length) { v.append(el("h2", "more-h", "More stories")); const g = el("div", "grid"); g.append(...more.map(card)); v.append(g); }
+  window.scrollTo(0, 0);
+}
+
+function route() {
+  const m = location.hash.match(/^#article=(.+)$/);
+  if (m) return renderArticle(decodeURIComponent(m[1]));
+  document.title = "OS Times | Breaking News & Campus Happenings";
+  $("article-view").hidden = true; $("list-view").hidden = false; $("tools").hidden = false;
+  renderChips(); renderList();
+}
+
+async function init() {
+  $("yr").textContent = new Date().getFullYear();
+  try {
+    // The number changes every minute so visitors never get a stale copy.
+    const r = await fetch("os-times-articles.json?v=" + Math.floor(Date.now() / 60000));
+    if (!r.ok) throw new Error("status " + r.status);
+    const data = await r.json();
+    const today = new Date().toISOString().slice(0, 10);
+    all = (data.articles || []).filter(a => a && a.id && a.title && a.date && !a.draft && a.date <= today);
+  } catch (e) {
+    console.error(e);
+    $("count").textContent = "";
+    $("grid").replaceChildren(el("p", "empty", "Stories could not be loaded. Check that os-times-articles.json is in the same folder and that its JSON is valid."));
+    return;
+  }
+  const b = all.filter(a => a.breaking).sort((x, y) => y.date.localeCompare(x.date))[0];
+  if (b) { const s = $("breaking"); s.hidden = false; s.append(el("strong", "", "Breaking: "), Object.assign(el("a", "", b.title), {href: "#article=" + encodeURIComponent(b.id)})); }
+  route();
+}
+$("q").addEventListener("input", e => { st.q = e.target.value; st.shown = PAGE; renderList(); });
+$("qclear").onclick = () => { st.q = ""; $("q").value = ""; renderList(); $("q").focus(); };
+$("sort").onchange = e => { st.sort = e.target.value; st.shown = PAGE; renderList(); };
+$("v-grid").onclick = () => setView("grid"); $("v-list").onclick = () => setView("list");
+function setView(v) { st.view = v; $("v-grid").setAttribute("aria-pressed", String(v === "grid")); $("v-list").setAttribute("aria-pressed", String(v === "list")); renderList(); }
+$("more").onclick = () => { st.shown += PAGE; renderList(); };
+window.addEventListener("hashchange", () => { if (all.length || location.hash) route(); });
+init();
+</script>
+</body>
+</html>
