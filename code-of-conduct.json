@@ -1,0 +1,15 @@
+{
+  "_help": "Write the code of conduct here. 'intro' is optional. Each section has a 'title', optional 'text' paragraphs, and optional 'rules' (numbered automatically). Leave 'sections' empty to show a coming-soon message.",
+  "_example": {
+    "title": "Section title",
+    "text": [
+      "A paragraph."
+    ],
+    "rules": [
+      "First rule.",
+      "Second rule."
+    ]
+  },
+  "intro": "",
+  "sections": []
+}

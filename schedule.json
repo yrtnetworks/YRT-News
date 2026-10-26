@@ -1,0 +1,312 @@
+{
+  "_help": "Each year has its own list of 'periods'. A period is one row of the table: 'time' is the label shown on the left and 'lessons' are the subjects for each day, in the same order as 'days'. Add or delete whole { } period blocks to change the number of rows, edit any time, and leave \"\" for a free slot. A year can also have its own \"days\" list if it needs different columns.",
+  "days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ],
+  "years": {
+    "1": {
+      "label": "1st Year",
+      "periods": [
+        {
+          "time": "08:30 – 09:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "09:20 – 10:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "10:10 – 10:55",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "11:15 – 12:00",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "12:05 – 12:50",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "13:30 – 14:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "14:20 – 15:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "2": {
+      "label": "2nd Year",
+      "periods": [
+        {
+          "time": "08:30 – 09:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "09:20 – 10:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "10:10 – 10:55",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "11:15 – 12:00",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "12:05 – 12:50",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "13:30 – 14:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "14:20 – 15:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "3": {
+      "label": "3rd Year",
+      "periods": [
+        {
+          "time": "08:30 – 09:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "09:20 – 10:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "10:10 – 10:55",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "11:15 – 12:00",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "12:05 – 12:50",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "13:30 – 14:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "14:20 – 15:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "4": {
+      "label": "4th Year",
+      "periods": [
+        {
+          "time": "08:30 – 09:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "09:20 – 10:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "10:10 – 10:55",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "11:15 – 12:00",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "12:05 – 12:50",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "13:30 – 14:15",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "time": "14:20 – 15:05",
+          "lessons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  }
+}

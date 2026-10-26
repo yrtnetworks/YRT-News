@@ -1,0 +1,11 @@
+{
+  "_help": "Tests are the same for every year. Add one { } block per test. date must be YYYY-MM-DD (past tests hide automatically). time, room and notes are optional. Leave 'tests' as [] to show 'No current tests.'",
+  "_example": {
+    "subject": "Subject name",
+    "date": "2026-12-01",
+    "time": "10:00",
+    "room": "Room",
+    "notes": "Anything students should know"
+  },
+  "tests": []
+}
