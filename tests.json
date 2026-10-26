@@ -2,7 +2,7 @@
   "_help": "test_season: 1 = show the tests below, 0 = show 'No current tests.' (the list is kept but hidden). hide_past: 1 = automatically hide tests whose date has passed, 0 = keep showing them. Each test: subject, grades (any text), and EITHER date (YYYY-MM-DD) OR from + to (YYYY-MM-DD) for a range. Optional: note, or dateText to override how the date is written. Tests show in the order listed.",
   "test_season": 1,
   "hide_past": 0,
-  "title": "First Term Exam Dates",
+  "title": "First Quarter Exam Dates",
   "subtitle": "2026–27 Academic Year",
   "tests": [
     {
