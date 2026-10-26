@@ -1,15 +1,131 @@
 {
-  "_help": "Write the code of conduct here. 'intro' is optional. Each section has a 'title', optional 'text' paragraphs, and optional 'rules' (numbered automatically). Leave 'sections' empty to show a coming-soon message.",
+  "_help": "Write the code of conduct here. 'intro' is optional. Each section has a 'title' and a 'content' list, shown in order. In 'content': a plain string is a paragraph, a string starting with \"## \" is a small sub-heading, and a list of strings [ ... ] is a numbered list (the numbers restart in each list). Wrap text in **double asterisks** to make it bold. Add \"major\": true to a section to style its title as a main heading. Leave 'sections' empty to show a coming-soon message.",
   "_example": {
     "title": "Section title",
-    "text": [
-      "A paragraph."
-    ],
-    "rules": [
-      "First rule.",
-      "Second rule."
+    "content": [
+      "A paragraph.",
+      "## A sub-heading",
+      [
+        "**Bold label:** First rule.",
+        "Second rule."
+      ],
+      "Another paragraph."
     ]
   },
   "intro": "",
-  "sections": []
+  "sections": [
+    {
+      "major": true,
+      "title": "1. STUDENT CONDUCT AND DISCIPLINE RULES",
+      "content": []
+    },
+    {
+      "title": "1.1 General Principles of Conduct",
+      "content": [
+        "Yahya Kemal College is dedicated to maintaining a safe, respectful, and encouraging learning community. All students are expected to uphold high standards of personal behavior, sportsmanship, and academic integrity both on campus and during official school functions.",
+        [
+          "**Respect for School Community:** Treat all teachers, administrative staff, service personnel, and fellow students with dignity, politeness, and respect. Disrespectful language, defiance, or insubordination toward school authority will not be tolerated.",
+          "**Protection of School Property:** Treat classrooms, facilities, equipment, and shared learning spaces with care and responsibility. Any intentional damage, vandalism, or misuse of school property must be repaired or financially compensated by the student/family involved, alongside appropriate disciplinary measures.",
+          "**Preservation of the Learning Environment:** Demonstrate behavior that fosters focused instruction. Punctuality, active participation, and refraining from distracting or disruptive actions during class are mandatory for all students.",
+          "**Embracing Diversity & Inclusivity:** Value individual differences regardless of ethnicity, language, religion, culture, nationality, or personal opinion. The school promotes an inclusive campus where mutual understanding and open dialogue are actively cultivated.",
+          "**Zero-Tolerance Policy on Violence & Bullying:** Bullying in any form—including physical aggression, verbal abuse, psychological intimidation, social exclusion, cyberbullying, or harassment—is strictly prohibited. Violations will lead to immediate disciplinary consequences and potential suspension."
+        ],
+        "Refrain from bullying, mockery, exclusion, and any form of violence."
+      ]
+    },
+    {
+      "title": "1.2 Unacceptable Behavior",
+      "content": [
+        "To keep everyone safe and help all students learn, the following behavior is not allowed at school, on school transport, or during school activities.",
+        [
+          "**Violence and Harassment:** Physical or verbal abuse, threats, intimidation, bullying, cyberbullying, or sharing images without permission.",
+          "**Theft or Unauthorized Use:** Taking, hiding, using, or damaging another person’s belongings or school property without permission.",
+          "**Substances:** Bringing, possessing, using, or sharing tobacco, vapes, alcohol, or illegal/prohibited substances.",
+          "**Dangerous Items:** Bringing weapons, blades, explosives, or other items that could hurt someone onto school premises.",
+          "**Repeated Misconduct:** Repeatedly breaking school rules, ignoring staff instructions, or refusing to follow previous disciplinary measures."
+        ],
+        "Consequences depend on the seriousness and frequency of the behavior. They may include a parent meeting, a deduction from the discipline score, suspension, or referral to the relevant authorities."
+      ]
+    },
+    {
+      "title": "1.3 Disciplinary Process",
+      "content": [
+        "Yahya Kemal College applies a fair, progressive, and restorative disciplinary approach to address rule violations while promoting accountability and personal growth. Disciplinary measures correspond to the severity, context, and frequency of the infraction:",
+        "## Graduated Action Steps",
+        [
+          "**Verbal Warning:** Issued by teachers or staff for minor, first-time infractions to redirect behavior promptly.",
+          "**Written Warning & Reflection:** Documented in the student’s record via MyEducare following persistent minor issues or a moderate policy violation.",
+          "**Parent-School Conference:** Formal meeting scheduled with parents/guardians to discuss behavioral concerns, establish corrective plans, and apply discipline score adjustments.",
+          "**Counseling & Guidance Support:** Mandatory guidance sessions with the school counseling unit to identify underlying causes and support positive behavioral changes.",
+          "**Disciplinary Board Review:** Reserved for major infractions or repeated misconduct. The board may issue formal sanctions, including temporary suspension or expulsion.",
+          "**Detention for Repeated Classroom Removals:** If a student is sent out of class twice in one week, the following week the student will serve a 45-minute detention in a designated classroom. The student must not use a phone during detention and will miss their regular service during that time. A parent or guardian must come to school to pick up the student after detention."
+        ],
+        "**Due Process & Transparency:** Every student maintains the right to be heard and present their account of events prior to any formal disciplinary decision. Parents are informed transparently at every stage of the process through official administrative communication."
+      ]
+    },
+    {
+      "title": "1.4 Anti-Bullying Policy",
+      "content": [
+        "Yahya Kemal College strictly enforces a zero-tolerance policy against all forms of bullying, harassment, and peer victimization. The school is committed to maintaining a safe, inclusive, and emotionally supportive environment where every student feels secure and valued.",
+        [
+          "**Scope of Policy:** Prohibited behavior includes direct physical aggression, verbal abuse, social exclusion, manipulation, relational intimidation, and cyberbullying (whether occurring during or outside school hours if it impacts the campus environment).",
+          "**Reporting Mechanisms:** Students who experience or witness bullying are urged to report the incident immediately. Reports can be submitted to homeroom teachers, subject instructors, school counselors, or school administrators.",
+          "**Confidentiality & Protection:** All reports are investigated promptly, thoroughly, and with strict confidentiality. The school guarantees full protection against retaliation for any student reporting a concern in good faith.",
+          "**Intervention & Resolution:** Confirmed bullying incidents result in immediate disciplinary action against the offender, structured counseling support for involved parties, and continuous monitoring by the administration to ensure long-term resolution."
+        ]
+      ]
+    },
+    {
+      "major": true,
+      "title": "2. DRESS CODE",
+      "content": []
+    },
+    {
+      "title": "2.1 School Uniform",
+      "content": [
+        "Yahya Kemal College maintains a uniform policy to promote equality, school pride, and a focused academic environment. Students are required to wear the official school uniform, complete and neat, during all regular school days, official examinations, and school-sponsored events. Adherence to the uniform policy is mandatory and non-negotiable for all enrolled students.",
+        "## Uniform Standard & Expectations",
+        [
+          "**Visibility:** The official school uniform must remain fully visible at all times (school logo must be visible). Wearing non-school outerwear (such as non-uniform hoodies, jackets, or oversized sweaters) over or under the uniform is strictly prohibited inside the school building. Also dark colored pants must be worn.",
+          "**Seasonal Attire:** Students must wear the designated official uniform items appropriate for the season (summer/winter options as authorized by the school). Unapproved, non-seasonal, or self-selected clothing items are not permitted.",
+          "**Completeness & Appearance:** Uniform items must be kept clean, neat, and in good repair.",
+          "**Footwear:** Students must wear appropriate, closed-toe footwear (e.g., dark dress shoes or plain sneakers). Open-toed shoes, sandals, and slippers are not permitted.",
+          "**Physical Education (PE) Attire:** Official PE uniforms and sports shoes are mandatory during physical education classes. Students must change back into their standard school uniform immediately after PE class concludes.",
+          "**Accessories & Grooming:** Jewellery, accessories, and hairstyles should be modest, practical, and non-distracting to the educational setting."
+        ],
+        "## Purchasing & Supplier Details",
+        [
+          "**Official Items:** Only official Yahya Kemal College apparel purchased through authorized vendors is accepted. Modified or non-standard clothing items are strictly prohibited.",
+          "**Announcements:** The complete uniform catalog, itemized specifications, and official supplier contact details are published by the administration prior to the start of each academic year on the school website and parent portal."
+        ],
+        "Students arriving at school out of uniform—or obscuring their uniform with non-approved clothing—without a valid written excuse signed by a parent or guardian will be required to contact their family to bring proper attire before entering the classroom.",
+        "Repeated uniform violations will result in disciplinary consequences and will directly affect the student’s discipline score."
+      ]
+    },
+    {
+      "title": "2.2 Physical Education Attire",
+      "content": [
+        "Proper athletic dress is required during Physical Education classes to ensure student safety, hygiene, and full participation in sports activities.",
+        [
+          "**Mandatory PE Kit:** Students must wear the official Yahya Kemal College PE kit (t-shirt, shorts/track pants) and suitable athletic sports shoes with non-marking soles. Standard dress shoes, casual sneakers, boots, or sandals are strictly forbidden on athletic courts.",
+          "**Changing Protocol:** Students must change into their PE uniform in the locker rooms immediately before class begins and change back into their standard daily uniform right after class ends. Wearing the PE kit during regular academic classes is not permitted.",
+          "**Hygiene & Safety:** For personal hygiene and safety, hair must be tied back if long, and all jewelry (including rings, necklaces, watches, and earrings) must be removed prior to physical activities.",
+          "**Participation & Grading:** Students who fail to bring their mandatory sports attire will not be allowed to take part in physical activities, which will negatively impact their PE participation grade."
+        ]
+      ]
+    },
+    {
+      "title": "2.3 General Appearance",
+      "content": [
+        "To preserve a professional academic environment and prevent non-approved branding from replacing the school identity, students are expected to adhere to clear grooming and style standards:",
+        [
+          "**Hair & Facial Hair:** Hair must be clean, well-groomed, and styled in a way that keeps it off the face during instruction. Extreme or unnatural hair colors, non-standard cuts, and overly distracting styles are not permitted. Male students must maintain a clean-shaven or neatly trimmed appearance as dictated by school policy.",
+          "**Makeup & Aesthetics:** Makeup must remain minimal, subtle, and natural. Excessive or dramatic cosmetics, highly visible face/body art, and temporary tattoos are strictly forbidden on campus.",
+          "**Jewelry & Accessories:** Accessories must be minimal, practical, and safe for daily school activities. Simple studs or small earrings, plain watches, and subtle religious or personal items (worn beneath clothing where necessary) are allowed. Large, dangling jewelry or heavy chains are prohibited for safety and decorum reasons.",
+          "**Strict No-Logo & Branding Policy:** Uniform items must remain free of unauthorized alterations, patches, pin badges, or visible third-party commercial logos, designs, or slogans. Adding personal branding, statements, or non-school symbols to any part of the uniform is strictly forbidden."
+        ],
+        "**Note:** Detailed specifications regarding exact colors, approved fabrics, official vendors, and seasonal variations are outlined in the separate Yahya Kemal College Official Dress Code Guidelines document issued at the beginning of each academic year."
+      ]
+    }
+  ]
 }
