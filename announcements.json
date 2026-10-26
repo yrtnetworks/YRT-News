@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Mid-term exam timetable published",
+    "date": "2026-10-24",
+    "from": "School Administration",
+    "important": true,
+    "message": "The mid-term timetable is now available. Check Yahya Now for dates and rooms."
+  },
+  {
+    "title": "Library open until 18:00 this week",
+    "date": "2026-10-20",
+    "from": "Library",
+    "important": false,
+    "message": "Extended hours to help with exam preparation."
+  }
+]

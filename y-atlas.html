@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0c2f2a">
+<meta name="description" content="Y-Atlas: the Yahya Kemal College–Struga student blog, school announcements and polls.">
+<link rel="icon" type="image/png" href="y-atlas-icon.png">
+<title>Y-Atlas | Student blog, announcements &amp; polls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,500..700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c2f2a;--sea:#1f6f5c;--paper:#eef6f3;--card:#fff;--pink:#e0457b;--mist:#cfe5de;
+--serif:"Fraunces",Georgia,serif;--sans:"Figtree","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.6 var(--sans);background:var(--paper);
+background-image:linear-gradient(var(--mist) 1px,transparent 1px),linear-gradient(90deg,var(--mist) 1px,transparent 1px);background-size:48px 48px}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+h1,h2,h3,p{margin-top:0;overflow-wrap:break-word}
+.top{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;padding:14px clamp(18px,4vw,48px);position:sticky;top:0;z-index:5}
+.top .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 22px var(--serif)}
+.top .logo img{height:38px;width:auto}
+.top nav{display:flex;gap:6px;flex:1}
+.tab{background:none;border:0;padding:8px 16px;border-radius:99px;cursor:pointer;font-weight:700}
+.tab[aria-selected=true]{background:var(--paper);color:var(--ink)}
+.tab:not([aria-selected=true]):hover{background:#ffffff22}
+.back{font-size:14px}
+.hero{padding:clamp(36px,7vw,90px) clamp(18px,4vw,48px) 20px;max-width:1100px;margin:auto}
+.hero h1{font:italic 700 clamp(52px,10vw,130px)/.9 var(--serif);letter-spacing:-.04em;margin-bottom:16px;color:var(--sea)}
+.hero p{max-width:34em;font-size:20px}
+main{max-width:1100px;margin:auto;padding:20px clamp(18px,4vw,48px) 70px}
+section[hidden]{display:none}
+h2{font:700 clamp(30px,4vw,46px)/1.05 var(--serif);letter-spacing:-.02em;margin:20px 0 22px}
+.meta{font-size:14px;color:#41615b}
+.chip{display:inline-block;padding:2px 12px;border-radius:99px;background:var(--mist);font-size:13px;font-weight:700}
+.chip.hot{background:var(--pink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.post{background:var(--card);border:2px solid var(--ink);border-radius:4px 28px 4px 28px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.post h3{font:700 25px/1.15 var(--serif);margin:4px 0}
+.post p{margin:0}
+.more{align-self:flex-start;background:none;border:2px solid var(--ink);border-radius:99px;padding:6px 16px;font-weight:700;cursor:pointer;margin-top:6px}
+.more:hover{background:var(--ink);color:var(--paper)}
+.full{display:none;white-space:pre-line;border-top:2px dashed var(--mist);padding-top:12px;margin-top:6px}
+.post.open .full{display:block}
+.ann{display:grid;grid-template-columns:96px 1fr;gap:6px 22px;background:var(--card);border-left:10px solid var(--sea);padding:20px 24px;margin-bottom:16px}
+.ann.important{border-color:var(--pink)}
+.ann .date{font:700 15px var(--serif);line-height:1.3}
+.ann h3{font:700 23px/1.2 var(--serif);margin-bottom:6px}
+.ann p{margin:0}
+.poll{background:var(--ink);color:var(--paper);border-radius:28px 4px 28px 4px;padding:26px;margin-bottom:22px;max-width:760px}
+.poll h3{font:700 26px/1.2 var(--serif)}
+.poll .meta{color:#a9cfc5}
+.opt{display:block;width:100%;text-align:left;background:none;border:2px solid #ffffff55;border-radius:12px;padding:12px 16px;margin-top:10px;cursor:pointer}
+.opt:hover{border-color:var(--pink);background:#ffffff12}
+.res{position:relative;margin-top:10px;border:2px solid #ffffff44;border-radius:12px;overflow:hidden;padding:12px 16px;display:flex;justify-content:space-between;gap:12px}
+.res i{position:absolute;inset:0 auto 0 0;background:var(--sea);width:0;transition:width .7s cubic-bezier(.2,.7,.2,1)}
+.res.mine i{background:var(--pink)}
+.res span{position:relative}
+.note,.empty{max-width:40em}
+.empty{padding:30px;background:var(--card);border:2px dashed var(--ink)}
+footer{background:var(--ink);color:var(--paper);padding:22px clamp(18px,4vw,48px);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(max-width:560px){.ann{grid-template-columns:1fr}.top nav{order:3;width:100%;flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.res i{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#blog"><img src="y-atlas-icon.png" alt="">Y-Atlas</a>
+  <nav role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" data-tab="blog" aria-selected="true">Blog</button>
+    <button class="tab" role="tab" data-tab="announcements" aria-selected="false">Announcements</button>
+    <button class="tab" role="tab" data-tab="polls" aria-selected="false">Polls</button>
+  </nav>
+  <a class="back" href="index.html">Back to YRT Network</a>
+</header>
+
+<div class="hero">
+  <h1>Y-Atlas</h1>
+  <p>Where YKC students write what they actually think, the school shares what you need to know, and everyone gets a vote.</p>
+</div>
+
+<main>
+  <section id="blog" role="tabpanel"><h2>Student blog</h2><div class="grid" id="blog-list"><p>Loading posts…</p></div></section>
+  <section id="announcements" role="tabpanel" hidden><h2>School announcements</h2><div id="ann-list"><p>Loading announcements…</p></div></section>
+  <section id="polls" role="tabpanel" hidden>
+    <h2>Polls</h2>
+    <p class="note meta">One vote per poll on each device. Results show after you vote.</p>
+    <div id="poll-list"><p>Loading polls…</p></div>
+  </section>
+</main>
+
+<footer><span>© <span id="year"></span> Y-Atlas · YRT Network</span><span>Student voices, school news.</span></footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+};
+const fmt = (d) => new Date(d + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+const getJSON = async (f) => {
+  const r = await fetch(f);
+  if (!r.ok) throw new Error(f);
+  return r.json();
+};
+const fail = (box, f) => {
+  box.replaceChildren(el("p", "empty", `Could not load ${f}. Check that it sits in the same folder as this page and the site is served over HTTP/HTTPS.`));
+};
+
+/* ---------- Tabs ---------- */
+const tabs = document.querySelectorAll(".tab");
+function show(name) {
+  if (!["blog", "announcements", "polls"].includes(name)) name = "blog";
+  tabs.forEach((t) => t.setAttribute("aria-selected", t.dataset.tab === name));
+  ["blog", "announcements", "polls"].forEach((s) => ($(s).hidden = s !== name));
+}
+tabs.forEach((t) => t.addEventListener("click", () => { location.hash = t.dataset.tab; }));
+window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+show(location.hash.slice(1));
+
+/* ---------- Blog ---------- */
+async function loadBlog() {
+  const box = $("blog-list");
+  try {
+    const posts = (await getJSON("blog.json")).sort((a, b) => b.date.localeCompare(a.date));
+    box.replaceChildren();
+    if (!posts.length) return box.append(el("p", "empty", "No posts yet. Be the first to write one."));
+    posts.forEach((p) => {
+      const card = el("article", "post");
+      const top = el("div", "meta", `${p.author} · ${fmt(p.date)}`);
+      if (p.tag) top.prepend(el("span", "chip", p.tag), " ");
+      const full = el("div", "full", p.content || "");
+      const btn = el("button", "more", "Read more");
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", () => {
+        const open = card.classList.toggle("open");
+        btn.textContent = open ? "Show less" : "Read more";
+        btn.setAttribute("aria-expanded", open);
+      });
+      card.append(top, el("h3", "", p.title), el("p", "", p.excerpt || ""));
+      if (p.content) card.append(full, btn);
+      box.append(card);
+    });
+  } catch (e) { fail(box, "blog.json"); }
+}
+
+/* ---------- Announcements ---------- */
+async function loadAnn() {
+  const box = $("ann-list");
+  try {
+    const list = (await getJSON("announcements.json")).sort((a, b) => (b.important - a.important) || b.date.localeCompare(a.date));
+    box.replaceChildren();
+    if (!list.length) return box.append(el("p", "empty", "No announcements right now."));
+    list.forEach((a) => {
+      const row = el("article", "ann" + (a.important ? " important" : ""));
+      const body = el("div");
+      const head = el("h3", "", a.title);
+      if (a.important) head.prepend(el("span", "chip hot", "Important"), " ");
+      body.append(head, el("p", "", a.message));
+      if (a.from) body.append(el("p", "meta", `From ${a.from}`));
+      row.append(el("div", "date", fmt(a.date)), body);
+      box.append(row);
+    });
+  } catch (e) { fail(box, "announcements.json"); }
+}
+
+/* ---------- Polls ---------- */
+const voteKey = (id) => "yatlas-vote-" + id;
+const getVote = (id) => { try { return localStorage.getItem(voteKey(id)); } catch (e) { return null; } };
+const setVote = (id, i) => { try { localStorage.setItem(voteKey(id), i); } catch (e) {} };
+
+function renderPoll(poll) {
+  const card = el("article", "poll");
+  const mine = getVote(poll.id);
+  const closed = poll.closes && new Date(poll.closes + "T23:59:59") < new Date();
+  card.append(el("h3", "", poll.question));
+  const info = poll.closes ? (closed ? `Closed ${fmt(poll.closes)}` : `Open until ${fmt(poll.closes)}`) : "Open";
+  card.append(el("p", "meta", info));
+
+  if (mine === null && !closed) {
+    poll.options.forEach((o, i) => {
+      const b = el("button", "opt", o.label);
+      b.type = "button";
+      b.addEventListener("click", () => {
+        if (getVote(poll.id) !== null) return;
+        setVote(poll.id, i);
+        card.replaceWith(renderPoll(poll));
+      });
+      card.append(b);
+    });
+    return card;
+  }
+
+  const counts = poll.options.map((o, i) => o.votes + (mine !== null && +mine === i ? 1 : 0));
+  const total = counts.reduce((a, b) => a + b, 0) || 1;
+  counts.forEach((c, i) => {
+    const pct = Math.round((c / total) * 100);
+    const r = el("div", "res" + (mine !== null && +mine === i ? " mine" : ""));
+    const bar = el("i");
+    r.append(bar, el("span", "", poll.options[i].label), el("span", "", `${pct}% (${c})`));
+    card.append(r);
+    requestAnimationFrame(() => requestAnimationFrame(() => (bar.style.width = pct + "%")));
+  });
+  card.append(el("p", "meta", mine !== null ? `You voted · ${total} votes` : `${total} votes`));
+  return card;
+}
+
+async function loadPolls() {
+  const box = $("poll-list");
+  try {
+    const polls = await getJSON("polls.json");
+    box.replaceChildren();
+    if (!polls.length) return box.append(el("p", "empty", "No polls running. Check back soon."));
+    polls.forEach((p) => box.append(renderPoll(p)));
+  } catch (e) { fail(box, "polls.json"); }
+}
+
+loadBlog(); loadAnn(); loadPolls();
+$("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

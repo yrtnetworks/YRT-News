@@ -1,0 +1,12 @@
+[
+  {
+    "id": "poll-2026-10-trip",
+    "question": "Where should the end-of-term trip go?",
+    "closes": "2026-11-15",
+    "options": [
+      { "label": "Ohrid", "votes": 0 },
+      { "label": "Skopje", "votes": 0 },
+      { "label": "Mavrovo", "votes": 0 }
+    ]
+  }
+]
