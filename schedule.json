@@ -1,3 +1,4 @@
+{
   "_help": "Schedules are split by language ('albanian' / 'macedonian') and then by year ('1' to '4'). Each year has 'periods': one { } block per table row, with a 'time' label and 'lessons' for each day in the same order as 'days'. Add or delete period blocks to change the number of rows, edit any time, and use \"\" for a free slot. A year can have its own \"days\" list if it needs different columns.",
   "days": [
     "Monday",
@@ -390,10 +391,9 @@
             }
           ]
         },
-            "2": {
-              "label": "2nd Year",
-              "periods": [
-            
+        "2": {
+          "label": "2nd Year",
+          "periods": [
             {
               "time": "08:30 – 09:15",
               "lessons": [
@@ -619,3 +619,4 @@
       }
     }
   }
+}
