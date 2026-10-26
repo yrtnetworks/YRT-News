@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,15 +104,15 @@
 
     /* Main logo: larger, without a rectangle or background */
     .brand-icon {
-    width: 200px;
-    height: auto;
-    padding: 0;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    object-fit: contain;
-    display: block;
-  }
+      width: 200px;
+      height: auto;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      object-fit: contain;
+      display: block;
+    }
 
     .brand-name {
       display: block;
@@ -448,12 +449,33 @@
 
     .feed-source {
       align-self: start;
-      padding-left: 14px;
-      border-left: 12px solid var(--c);
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-family: var(--display);
       font-size: 19px;
       font-weight: 700;
       line-height: 1.25;
+    }
+
+    .feed-icon {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .feed-loading {
+      padding: 20px 0;
+    }
+
+    .feed-story-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: var(--display);
+      font-weight: 700;
+      text-underline-offset: 4px;
     }
 
     .feed-os {
@@ -482,11 +504,6 @@
       margin-bottom: 0;
     }
 
-    .feed-note {
-      margin: 22px 0 0;
-      font-size: 15px;
-    }
-
     /* ---------- About ---------- */
 
     .about-grid {
@@ -497,8 +514,8 @@
     }
 
     .about-icon {
-      width: 150px;
-      height: 150px;
+      width: 250px;
+      height: auto;
       margin-top: 28px;
       padding: 0;
       background: transparent;
@@ -964,54 +981,16 @@
 
       </section>
 
-      <!-- Latest stories -->
+      <!-- Latest stories: content is loaded from latest.json -->
       <section class="block" id="stories">
         <div class="block-head">
           <h2>Latest from the network</h2>
-          <p>
-            Featured articles and updates from the publications will appear here.
-          </p>
+          <p>Featured articles and updates from the publications.</p>
         </div>
 
-        <ul class="feed">
-          <li>
-            <div class="feed-source feed-os">OS Times</div>
-            <div>
-              <h3>Your next featured story goes here.</h3>
-              <p>
-                Replace this sample with a real article title and a short
-                introduction for your readers.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div class="feed-source feed-atlas">Y-Atlas</div>
-            <div>
-              <h3>Ideas and perspectives worth exploring.</h3>
-              <p>
-                Introduce an article from Y-Atlas here, with a summary
-                and a link to the full story.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div class="feed-source feed-yrt">YRT Network</div>
-            <div>
-              <h3>What's new across the network?</h3>
-              <p>
-                Use this space for an announcement, a project,
-                or a publication update.
-              </p>
-            </div>
-          </li>
+        <ul class="feed" id="latest-feed" aria-live="polite">
+          <li class="feed-loading">Loading the latest stories…</li>
         </ul>
-
-        <p class="feed-note">
-          These are sample entries, not published news. Replace them with
-          verified stories before launching the site publicly.
-        </p>
       </section>
 
       <!-- About -->
@@ -1091,10 +1070,69 @@
       });
     });
 
+    // Load editable story content from latest.json.
+    // Keep latest.json in the same folder as this HTML file.
+    async function loadLatestStories() {
+      const feed = document.getElementById("latest-feed");
+
+      try {
+        const response = await fetch("latest.json");
+        if (!response.ok) throw new Error("Could not load latest.json");
+
+        const stories = await response.json();
+        feed.replaceChildren();
+
+        stories.forEach((story) => {
+          const item = document.createElement("li");
+
+          const source = document.createElement("div");
+          source.className = `feed-source ${story.sourceClass || ""}`.trim();
+
+          const icon = document.createElement("img");
+          icon.className = "feed-icon";
+          icon.src = story.icon;
+          icon.alt = `${story.source} icon`;
+          icon.loading = "lazy";
+
+          const sourceName = document.createElement("span");
+          sourceName.textContent = story.source;
+          source.append(icon, sourceName);
+
+          const copy = document.createElement("div");
+          const title = document.createElement("h3");
+          title.textContent = story.title;
+
+          const description = document.createElement("p");
+          description.textContent = story.description;
+          copy.append(title, description);
+
+          if (story.url) {
+            const link = document.createElement("a");
+            link.className = "feed-story-link";
+            link.href = story.url;
+            link.textContent = story.linkText || "Read the full story";
+            copy.append(link);
+          }
+
+          item.append(source, copy);
+          feed.append(item);
+        });
+      } catch (error) {
+        feed.replaceChildren();
+        const item = document.createElement("li");
+        item.className = "feed-loading";
+        item.textContent =
+          "Latest stories could not be loaded. Check that latest.json is in the same folder and the site is being served over HTTP/HTTPS.";
+        feed.append(item);
+        console.error(error);
+      }
+    }
+
+    loadLatestStories();
+
     // Automatically update the copyright year.
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
 </body>
 </html>
-```
